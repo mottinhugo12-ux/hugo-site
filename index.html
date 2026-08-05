@@ -112,6 +112,17 @@
   .scroll-cue i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}
   @keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
 
+  /* ---------- PARTNERS / GARAGES ---------- */
+  .partners{background:#0d0d0d;padding:clamp(40px,6vw,64px) clamp(20px,5vw,64px)}
+  .partners-inner{max-width:1100px;margin:0 auto;text-align:center}
+  .partners-label{display:block;font-size:12px;letter-spacing:.20em;text-transform:uppercase;
+    color:rgba(255,255,255,.5);font-weight:600;margin-bottom:32px}
+  .partners-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(36px,6vw,72px)}
+  .partners-logos a{display:flex;align-items:center;opacity:.75;transition:opacity .3s}
+  .partners-logos a:hover{opacity:1}
+  .partners-logos img{height:34px;width:auto;max-width:160px;object-fit:contain}
+  @media(max-width:560px){.partners-logos{gap:28px}.partners-logos img{height:26px}}
+
   /* ---------- SECTIONS ---------- */
   section{padding:clamp(70px,11vw,150px) clamp(20px,5vw,64px);position:relative}
   .works-section{padding-bottom:clamp(40px,5vw,70px)}
@@ -295,6 +306,27 @@
     </div>
   </div>
   <div class="scroll-cue"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- ================= PARTNERS / GARAGES ================= -->
+<section class="partners" id="partners">
+  <div class="partners-inner reveal">
+    <span class="partners-label">Ils me font confiance</span>
+    <div class="partners-logos">
+      <a href="https://analogautomobile.fr/" target="_blank" rel="noopener" aria-label="Analog Automobile">
+        <img src="logo-analog-automobile.png" alt="Analog Automobile" loading="lazy">
+      </a>
+      <a href="https://www.cecil-cars.com/" target="_blank" rel="noopener" aria-label="Cecil Cars">
+        <img src="logo-cecil-cars.png" alt="Cecil Cars" loading="lazy">
+      </a>
+      <a href="https://www.iconic-atelier.fr/" target="_blank" rel="noopener" aria-label="Iconic - Atelier des Légendes">
+        <img src="logo-iconic-atelier.webp" alt="Iconic - Atelier des Légendes" loading="lazy">
+      </a>
+      <a href="https://www.montblancautomobiles.com/" target="_blank" rel="noopener" aria-label="Mont Blanc Auto">
+        <img src="logo-montblanc-auto.png" alt="Mont Blanc Auto" loading="lazy">
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- ================= WORKS ================= -->
