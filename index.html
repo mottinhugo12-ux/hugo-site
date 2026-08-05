@@ -136,7 +136,7 @@
 
   /* ---------- WORKS GRID ---------- */
   .works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .films{display:grid;grid-template-columns:1fr;gap:18px;margin:0 auto 64px;max-width:760px}
+  .films{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:0 auto 64px;max-width:1100px}
   .work{position:relative;border-radius:14px;overflow:hidden;background:var(--card);
     aspect-ratio:9/16;cursor:pointer;border:1px solid var(--line)}
   .work--wide{aspect-ratio:1920/1080;cursor:default}
@@ -340,7 +340,7 @@
   </div>
 
   <!-- ===== FILMS 16:9 (format horizontal) =====
-       DÉJÀ CÂBLÉ. Dépose simplement dans ce dossier : film1.mp4 + film1.jpg, film2.mp4 + film2.jpg.
+       DÉJÀ CÂBLÉ. Dépose simplement dans ce dossier : film1.mp4 + film1.jpg, film2.mp4 + film2.jpg, film3.mp4 + film3.jpg, film4.mp4 + film4.jpg.
        Pas de code à modifier. Si un fichier manque, le fond gris s'affiche automatiquement. -->
   <div class="subhead reveal">
     <span class="sec-tag">Format horizontal</span>
@@ -358,6 +358,10 @@
     <div class="work work--wide reveal">
       <div class="ph v6"></div><video class="ph" src="film3.mp4" autoplay muted loop playsinline poster="film3.jpg" onerror="this.style.display='none'"></video><div class="grad"></div><span class="tagchip">Vidéo</span>
       <div class="meta"><div class="t">Iconic</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
+    </div>
+    <div class="work work--wide reveal">
+      <div class="ph v1"></div><video class="ph" src="film4.mp4" autoplay muted loop playsinline poster="film4.jpg" onerror="this.style.display='none'"></video><div class="grad"></div><span class="tagchip">Vidéo</span>
+      <div class="meta"><div class="t">Vidéo éditorial</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
     </div>
   </div>
 
