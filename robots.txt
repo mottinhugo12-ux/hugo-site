@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hugo-site-xi.vercel.app/sitemap.xml
+Sitemap: https://hugomottin.com/sitemap.xml

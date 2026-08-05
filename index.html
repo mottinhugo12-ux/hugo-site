@@ -3,37 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vidéaste automobile à Valence, Lyon & Drôme (Rhône-Alpes) | Hugo Mottin</title>
+<title>Vidéaste automobile à Paris, Rhône-Alpes & Côte d'Azur | Hugo Mottin</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
-<link rel="canonical" href="https://hugo-site-xi.vercel.app/">
-<meta name="description" content="Hugo Mottin, vidéaste automobile à Valence, Lyon et dans la Drôme (Rhône-Alpes). Vidéos cinématiques pour garages, voitures de collection et de prestige.">
-<meta name="keywords" content="vidéaste automobile, vidéo automobile, vidéaste automobile Valence, vidéaste automobile Lyon, vidéo voiture Drôme, vidéaste Rhône-Alpes, voiture de collection, reels automobile, vidéo garage automobile">
+<link rel="canonical" href="https://hugomottin.com/">
+<meta name="description" content="Hugo Mottin, vidéaste automobile & réseaux sociaux basé en Rhône-Alpes, à Paris et sur la Côte d'Azur. Vidéos cinématiques et gestion de contenu réseaux sociaux pour garages et voitures de collection.">
+<meta name="keywords" content="vidéaste automobile, vidéo automobile, vidéaste automobile Paris, vidéaste automobile Rhône-Alpes, vidéaste automobile Côte d'Azur, vidéaste automobile Valence, vidéaste automobile Lyon, vidéo voiture Drôme, vidéo automobile Cannes, vidéo automobile Nice, voiture de collection, reels automobile, vidéo garage automobile, réseaux sociaux garage automobile, gestion réseaux sociaux garage, community management automobile, création de contenu Instagram automobile, community manager garage automobile">
 <meta name="author" content="Hugo Mottin">
 <meta name="geo.region" content="FR-ARA">
-<meta name="geo.placename" content="Valence, Lyon, Drôme, Rhône-Alpes">
-<meta property="og:title" content="Vidéaste automobile à Valence, Lyon & Drôme | Hugo Mottin">
-<meta property="og:description" content="Vidéos automobiles cinématiques pour garages et voitures de collection à Valence, Lyon et en Rhône-Alpes.">
+<meta name="geo.placename" content="Paris, Lyon, Valence, Drôme, Rhône-Alpes, Côte d'Azur">
+<meta property="og:title" content="Vidéaste automobile & réseaux sociaux | Paris, Rhône-Alpes & Côte d'Azur | Hugo Mottin">
+<meta property="og:description" content="Vidéos automobiles cinématiques et gestion de réseaux sociaux pour garages et voitures de collection à Paris, en Rhône-Alpes et sur la Côte d'Azur.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:url" content="https://hugo-site-xi.vercel.app/">
-<meta property="og:image" content="https://hugo-site-xi.vercel.app/moi.jpg">
+<meta property="og:url" content="https://hugomottin.com/">
+<meta property="og:image" content="https://hugomottin.com/moi.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Hugo Mottin · Vidéaste automobile",
-  "description": "Vidéaste automobile à Valence, Lyon et dans la Drôme (Rhône-Alpes). Vidéos cinématiques pour garages, voitures de collection et de prestige.",
-  "url": "https://hugo-site-xi.vercel.app/",
-  "image": "https://hugo-site-xi.vercel.app/moi.jpg",
+  "description": "Vidéaste automobile & réseaux sociaux basé en Rhône-Alpes, intervenant à Paris et sur la Côte d'Azur. Vidéos cinématiques et gestion de contenu réseaux sociaux pour garages, voitures de collection et de prestige.",
+  "url": "https://hugomottin.com/",
+  "image": "https://hugomottin.com/moi.jpg",
   "telephone": "+33603721383",
   "email": "mottin.hugo12@gmail.com",
   "priceRange": "€€",
   "address": { "@type": "PostalAddress", "addressRegion": "Auvergne-Rhône-Alpes", "addressCountry": "FR" },
-  "areaServed": ["Valence", "Lyon", "Drôme", "Rhône-Alpes", "Auvergne-Rhône-Alpes"],
+  "areaServed": ["Paris", "Valence", "Lyon", "Drôme", "Rhône-Alpes", "Auvergne-Rhône-Alpes", "Côte d'Azur", "Provence-Alpes-Côte d'Azur", "Île-de-France"],
   "sameAs": ["https://www.instagram.com/hugomottin/"],
-  "knowsAbout": ["vidéo automobile", "voiture de collection", "reels", "montage vidéo", "étalonnage"]
+  "knowsAbout": ["vidéo automobile", "voiture de collection", "reels", "montage vidéo", "étalonnage", "réseaux sociaux", "community management", "création de contenu Instagram", "gestion de réseaux sociaux pour garages"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -169,8 +169,8 @@
   .works-cta{margin-top:46px;text-align:center}
   /* embeds Instagram */
   .reels-intro{max-width:600px;color:var(--muted);font-size:16px;margin:-24px 0 32px}
-  .reels-embeds{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:flex-start}
-  .reel-embed{width:340px;max-width:100%}
+  .reels-embeds{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:flex-start}
+  .reel-embed{width:100%}
   .reel-embed .instagram-media{min-width:0!important;width:100%!important;margin:0!important;border-radius:14px!important}
 
   /* ---------- ABOUT ---------- */
@@ -249,7 +249,7 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:900px){
-    .works,.svc-grid{grid-template-columns:repeat(2,1fr)}
+    .works,.svc-grid,.reels-embeds{grid-template-columns:repeat(2,1fr)}
     .cases{grid-template-columns:1fr}
     .about{grid-template-columns:1fr}
     .about-portrait{max-width:420px;order:-1}
@@ -266,7 +266,7 @@
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   }
   @media(max-width:560px){
-    .works,.svc-grid,.films{grid-template-columns:1fr}
+    .works,.svc-grid,.films,.reels-embeds{grid-template-columns:1fr}
     .work{aspect-ratio:4/5}
     .work--wide{aspect-ratio:1920/1080}
   }
@@ -297,7 +297,7 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-inner reveal">
-    <span class="eyebrow">Vidéaste automobile · Valence · Lyon · Drôme · Rhône-Alpes</span>
+    <span class="eyebrow">Vidéaste automobile · Paris · Rhône-Alpes · Côte d'Azur</span>
     <h1>Vidéos<br><em>automobiles</em><br>cinématiques</h1>
     <p>Je transforme vos voitures d'exception en contenus vidéo qui captent l'attention, racontent une histoire et font vivre vos réseaux sociaux.</p>
     <div class="hero-actions">
@@ -389,6 +389,11 @@
         <a href="https://www.instagram.com/p/DY_qU0utXpX/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
       </blockquote>
     </div>
+    <div class="reel-embed">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaNOfWiOeV-/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
+        <a href="https://www.instagram.com/p/DaNOfWiOeV-/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
+      </blockquote>
+    </div>
   </div>
 
   <div class="works-cta reveal">
@@ -474,7 +479,7 @@
     <div class="svc reveal">
       <div class="num">02</div>
       <h3>Pack contenu<br>mensuel</h3>
-      <p>Plusieurs reels par mois, planifiés et livrés prêts à publier. Une présence régulière, sans y penser.</p>
+      <p>Plusieurs reels par mois, planifiés et livrés prêts à publier sur vos réseaux sociaux. Une gestion de contenu régulière, sans y penser.</p>
       <div class="price">À partir de <b>700 € / mois</b></div>
     </div>
     <div class="svc reveal">
@@ -490,7 +495,7 @@
 <section class="contact" id="contact">
   <span class="sec-tag reveal">Contact</span>
   <h2 class="reveal"><a href="mailto:mottin.hugo12@gmail.com">Donnons vie<br>à vos voitures</a></h2>
-  <p class="lead reveal">Vous avez de belles voitures à mettre en valeur ? Basé dans la Drôme, j'interviens à Valence, Lyon et dans toute la région Rhône-Alpes. Parlons-en et créons ensemble du contenu qui vous démarque.</p>
+  <p class="lead reveal">Vous avez de belles voitures à mettre en valeur, ou vos réseaux sociaux à développer ? Basé en Rhône-Alpes, j'interviens aussi à Paris et sur la Côte d'Azur. Parlons-en et créons ensemble du contenu qui vous démarque.</p>
   <p class="contact-coords reveal">
     <a href="tel:+33603721383">06 03 72 13 83</a>
     <span class="sep">·</span>
@@ -506,7 +511,7 @@
 <footer>
   <span class="brand">HUGO <span style="color:var(--gold)">MOTTIN</span></span>
   <span>© <span id="yr"></span> · Vidéos automobiles cinématiques</span>
-  <span>Valence · Lyon · Drôme · Rhône-Alpes</span>
+  <span>Paris · Rhône-Alpes · Côte d'Azur</span>
 </footer>
 
 <script>
