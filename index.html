@@ -188,24 +188,6 @@
   .stat .n{font-weight:800;font-size:34px;color:var(--gold)}
   .stat .l{font-size:12px;letter-spacing:.10em;text-transform:uppercase;color:var(--muted)}
 
-  /* ---------- ÉTUDES DE CAS ---------- */
-  .cases-wrap{margin-top:clamp(60px,9vw,110px)}
-  .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  .case{display:block;color:inherit;border:1px solid var(--line);border-radius:14px;padding:34px 32px;background:#fff;transition:.4s}
-  .case:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.06);border-color:rgba(0,0,0,.4)}
-  .case h4{transition:color .25s}
-  .case:hover h4{color:var(--muted)}
-  .case-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
-  .case h4{font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:-.01em}
-  .case-tag{flex:none;font-size:10px;letter-spacing:.10em;text-transform:uppercase;font-weight:600;
-    padding:5px 11px;border-radius:30px;border:1px solid var(--line);white-space:nowrap}
-  .case-tag.live{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .case-tag.past{color:var(--muted)}
-  .case .role{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:6px 0 16px}
-  .case p{color:var(--muted);font-size:15px;margin-bottom:24px}
-  .case-stats{display:flex;gap:34px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
-  .case-stats b{display:block;font-weight:800;font-size:30px;line-height:1}
-  .case-stats span{font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);margin-top:6px;display:block}
 
   /* ---------- SERVICES ---------- */
   .services{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -250,7 +232,6 @@
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:900px){
     .works,.svc-grid,.reels-embeds{grid-template-columns:repeat(2,1fr)}
-    .cases{grid-template-columns:1fr}
     .about{grid-template-columns:1fr}
     .about-portrait{max-width:420px;order:-1}
     nav{position:fixed;inset:0 0 0 auto;width:74%;max-width:320px;background:#fff;
@@ -422,45 +403,6 @@
     </div>
   </div>
 
-  <!-- ===== ÉTUDES DE CAS / RÉFÉRENCES =====
-       REMPLACE les chiffres entre [crochets] par tes vraies stats (vues, portée, abonnés gagnés…). -->
-  <div class="cases-wrap reveal">
-    <div class="subhead">
-      <span class="sec-tag">Études de cas</span>
-      <h3>Projets précédents</h3>
-    </div>
-    <div class="cases">
-
-      <a class="case" href="https://www.instagram.com/le.permacultueur/" target="_blank" rel="noopener">
-        <div class="case-head">
-          <h4>Goran le permaculteur</h4>
-          <span class="case-tag past">Projet passé</span>
-        </div>
-        <span class="role">Concept, création &amp; développement de A à Z</span>
-        <p>J'ai créé ce projet de toutes pièces et l'ai développé jusqu'à 1 million d'abonnés en un an. Une croissance fulgurante qui prouve ma capacité à créer du contenu à très forte portée. La collaboration est aujourd'hui terminée.</p>
-        <div class="case-stats">
-          <div><b>1 M</b><span>Abonnés atteints</span></div>
-          <div><b>1 an</b><span>Pour y parvenir</span></div>
-          <div><b>De zéro</b><span>Créé &amp; développé</span></div>
-        </div>
-      </a>
-
-      <a class="case" href="https://www.instagram.com/alexipav/" target="_blank" rel="noopener">
-        <div class="case-head">
-          <h4>Alexi Pavlov</h4>
-          <span class="case-tag live">Collaboration en cours</span>
-        </div>
-        <span class="role">Réseaux sociaux · Réalisations photo &amp; vidéo</span>
-        <p>J'accompagne Alexi Pavlov sur ses réseaux sociaux et ses réalisations photo et vidéo, sur des projets pour des marques et personnalités comme Inoxtag, Google ou Adidas.</p>
-        <div class="case-stats">
-          <div><b>Réseaux</b><span>Gestion de contenu</span></div>
-          <div><b>Photo &amp; vidéo</b><span>Direction &amp; réalisation</span></div>
-          <div><b>Marques</b><span>Inoxtag, Google, Adidas…</span></div>
-        </div>
-      </a>
-
-    </div>
-  </div>
 </section>
 
 <!-- ================= SERVICES ================= -->
