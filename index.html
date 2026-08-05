@@ -136,10 +136,10 @@
 
   /* ---------- WORKS GRID ---------- */
   .works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .films{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:64px}
+  .films{display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:64px}
   .work{position:relative;border-radius:14px;overflow:hidden;background:var(--card);
     aspect-ratio:9/16;cursor:pointer;border:1px solid var(--line)}
-  .work--wide{aspect-ratio:1350/1080;cursor:default}
+  .work--wide{aspect-ratio:1920/1080;cursor:default}
   .subhead{margin:0 0 26px}
   .subhead h3{font-weight:800;font-size:clamp(20px,2.6vw,30px);text-transform:uppercase;letter-spacing:-.01em}
   .subhead .sec-tag{display:block;margin-bottom:8px}
@@ -268,7 +268,7 @@
   @media(max-width:560px){
     .works,.svc-grid,.films{grid-template-columns:1fr}
     .work{aspect-ratio:4/5}
-    .work--wide{aspect-ratio:1350/1080}
+    .work--wide{aspect-ratio:1920/1080}
   }
 </style>
 </head>
@@ -349,11 +349,15 @@
   <div class="films">
     <div class="work work--wide reveal">
       <div class="ph v2"></div><video class="ph" src="film1.mp4" autoplay muted loop playsinline poster="film1.jpg" onerror="this.style.display='none'"></video><div class="grad"></div><span class="tagchip">Vidéo</span>
-      <div class="meta"><div class="t">Vidéo éditorial</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
+      <div class="meta"><div class="t">Analog Automobile</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
     </div>
     <div class="work work--wide reveal">
       <div class="ph v4"></div><video class="ph" src="film2.mp4" autoplay muted loop playsinline poster="film2.jpg" onerror="this.style.display='none'"></video><div class="grad"></div><span class="tagchip">Vidéo</span>
       <div class="meta"><div class="t">Vidéo éditorial</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
+    </div>
+    <div class="work work--wide reveal">
+      <div class="ph v6"></div><video class="ph" src="film3.mp4" autoplay muted loop playsinline poster="film3.jpg" onerror="this.style.display='none'"></video><div class="grad"></div><span class="tagchip">Vidéo</span>
+      <div class="meta"><div class="t">Iconic</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
     </div>
   </div>
 
