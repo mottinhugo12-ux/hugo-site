@@ -180,7 +180,9 @@
   .subhead{margin:0 0 26px}
   .subhead h3{font-weight:800;font-size:clamp(20px,2.6vw,30px);text-transform:uppercase;letter-spacing:-.01em}
   .subhead .sec-tag{display:block;margin-bottom:8px}
-  .work .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+  .work .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .9s cubic-bezier(.2,.8,.2,1);
+    -webkit-user-drag:none;user-select:none;pointer-events:none}
+  .films{touch-action:pan-x pan-y}
   .work:hover .ph{transform:scale(1.07)}
   .work .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(0,0,0,.78))}
   .work .meta{position:absolute;left:18px;right:18px;bottom:18px;z-index:3}
@@ -289,7 +291,14 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:900px){
-    .svc-grid,.reels-embeds,.sectors-grid{grid-template-columns:repeat(2,1fr)}
+    .svc-grid,.reels-embeds{grid-template-columns:repeat(2,1fr)}
+    .sectors-grid,.sectors-desc{grid-template-columns:1fr}
+    .sector{aspect-ratio:16/9}
+    .intro-overlay{background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.55))}
+    .intro-text{max-width:100%;text-align:center}
+    .intro-text p{max-width:100%;margin-left:auto;margin-right:auto}
+    .intro .hero-actions{justify-content:center}
+    .presents-band h2{font-size:clamp(22px,6vw,34px)}
     .about{grid-template-columns:1fr}
     .about-portrait{max-width:420px;order:-1}
     .hero{min-height:70vh;padding-top:110px}
@@ -307,7 +316,7 @@
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   }
   @media(max-width:560px){
-    .svc-grid,.reels-embeds,.sectors-grid{grid-template-columns:1fr}
+    .svc-grid,.reels-embeds{grid-template-columns:1fr}
   }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -332,7 +341,7 @@
   <!-- VIDÉO DE FOND : place ton fichier "hero.mp4" à côté de index.html (et "hero.jpg" comme image d'attente).
        Décommente la balise <source> ci-dessous une fois ton fichier prêt. Tant qu'il n'y a pas de vidéo,
        le dégradé clair s'affiche automatiquement. Utilise une vidéo courte, muette, en boucle (max ~10-15 Mo). -->
-  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="hero.jpg">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero.jpg" fetchpriority="high">
     <source src="hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -373,8 +382,8 @@
   <div class="presents-band">
     <!-- VIDÉO DE BANDE : place ton fichier "presents.mp4" à côté de index.html (et "presents.jpg" comme image d'attente).
          Tant qu'il n'y a pas de vidéo, le fond noir s'affiche automatiquement. -->
-    <video class="band-video" autoplay muted loop playsinline preload="metadata" poster="presents.jpg">
-      <source src="presents.mp4" type="video/mp4">
+    <video class="band-video lazy-video" muted loop playsinline preload="none" poster="presents.jpg">
+      <source data-src="presents.mp4" type="video/mp4">
     </video>
     <div class="band-overlay"></div>
     <div class="band-content">
@@ -394,42 +403,42 @@
   </div>
   <div class="films" id="filmsSlider">
     <a class="work work--poster reveal" href="film1.html">
-      <div class="ph v2"></div><img class="ph" src="film1.jpg" alt="Porsche GT3 RS" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v2"></div><img class="ph" src="film1.jpg" alt="Porsche GT3 RS" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Porsche</div><div class="model">GT3 RS</div></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film2.html">
-      <div class="ph v4"></div><img class="ph" src="film2.jpg" alt="Ferrari Portofino" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v4"></div><img class="ph" src="film2.jpg" alt="Ferrari Portofino" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Ferrari</div><div class="model">Portofino</div></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film3.html">
-      <div class="ph v6"></div><img class="ph" src="film3.jpg" alt="Porsche Carrera 3.0L" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v6"></div><img class="ph" src="film3.jpg" alt="Porsche Carrera 3.0L" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Porsche</div><div class="model">Carrera 3.0L</div></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film4.html">
-      <div class="ph v1"></div><img class="ph" src="film4.jpg" alt="BMW 325i" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v1"></div><img class="ph" src="film4.jpg" alt="BMW 325i" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">BMW</div><div class="model">325i</div></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film5.html">
-      <div class="ph v3"></div><img class="ph" src="film5.jpg" alt="Mazda Miata" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v3"></div><img class="ph" src="film5.jpg" alt="Mazda Miata" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Mazda</div><div class="model">Miata</div></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film6.html">
-      <div class="ph v5"></div><img class="ph" src="film6.jpg" alt="Lancia Delta & Beta" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v5"></div><img class="ph" src="film6.jpg" alt="Lancia Delta & Beta" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Lancia</div><div class="model">Delta &amp; Beta</div></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film7.html">
-      <div class="ph v2"></div><img class="ph" src="film7.jpg" alt="Porsche Cayman GT4" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v2"></div><img class="ph" src="film7.jpg" alt="Porsche Cayman GT4" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Porsche</div><div class="model">Cayman GT4</div></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film8.html">
-      <div class="ph v4"></div><img class="ph" src="film8.jpg" alt="Mercedes-Benz SL500" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v4"></div><img class="ph" src="film8.jpg" alt="Mercedes-Benz SL500" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Mercedes-Benz</div><div class="model">SL500</div></div>
       <div class="work-mark">HM</div>
     </a>
@@ -439,8 +448,8 @@
        VIDÉO : place ton fichier "intro.mp4" à côté de index.html (et "intro.jpg" comme image d'attente).
        Tant qu'il n'y a pas de vidéo, le fond noir s'affiche automatiquement. -->
   <div class="intro reveal">
-    <video class="intro-video" autoplay muted loop playsinline preload="metadata" poster="intro.jpg">
-      <source src="intro.mp4" type="video/mp4">
+    <video class="intro-video lazy-video" muted loop playsinline preload="none" poster="intro.jpg">
+      <source data-src="intro.mp4" type="video/mp4">
     </video>
     <div class="intro-overlay"></div>
     <div class="intro-text">
@@ -490,15 +499,15 @@
        Si une image manque, le fond gris s'affiche automatiquement. -->
   <div class="sectors-grid reveal">
     <div class="sector">
-      <div class="ph v2"></div><img class="ph" src="secteur-presentation-vehicule.jpg" alt="Présentation véhicule" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v2"></div><img class="ph" src="secteur-presentation-vehicule.jpg" alt="Présentation véhicule" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <span class="sector-label">Présentation véhicule</span>
     </div>
     <div class="sector">
-      <div class="ph v4"></div><img class="ph" src="secteur-evenement-garage.jpg" alt="Événement garage" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v4"></div><img class="ph" src="secteur-evenement-garage.jpg" alt="Événement garage" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <span class="sector-label">Événement garage</span>
     </div>
     <div class="sector">
-      <div class="ph v6"></div><img class="ph" src="secteur-focus-atelier.jpg" alt="Focus atelier" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="ph v6"></div><img class="ph" src="secteur-focus-atelier.jpg" alt="Focus atelier" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <span class="sector-label">Focus atelier</span>
     </div>
   </div>
@@ -613,6 +622,18 @@
     document.getElementById('filmsPrev').addEventListener('click', () => scrollByCard(-1));
     document.getElementById('filmsNext').addEventListener('click', () => scrollByCard(1));
   }
+  const videoIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const v = e.target;
+        const src = v.querySelector('source');
+        if (src && src.dataset.src) { src.src = src.dataset.src; v.load(); }
+        v.play().catch(() => {});
+        videoIo.unobserve(v);
+      }
+    });
+  }, { rootMargin: '900px 0px' });
+  document.querySelectorAll('.lazy-video').forEach(v => videoIo.observe(v));
 </script>
 <!-- Script Instagram : transforme les liens reels en vidéos lisibles directement sur le site -->
 <script async src="https://www.instagram.com/embed.js"></script>
