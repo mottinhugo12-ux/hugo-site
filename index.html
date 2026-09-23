@@ -195,9 +195,12 @@
   .v6{background:linear-gradient(135deg,#828280,#1f1f1f 78%),radial-gradient(circle at 70% 65%,rgba(255,255,255,.18),transparent 50%)}
   .works-cta{margin-top:46px;text-align:center}
   /* embeds Instagram */
-  .reels-embeds{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:flex-start}
-  .reel-embed{width:100%}
-  .reel-embed .instagram-media{min-width:0!important;width:100%!important;margin:0!important;border-radius:14px!important}
+  .reels-embeds{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+  .reel-embed{width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    background:#fff;display:flex;align-items:center;justify-content:center;
+    padding:10px;transition:.4s}
+  .reel-embed:hover{border-color:rgba(0,0,0,.3);box-shadow:0 16px 40px rgba(0,0,0,.06);transform:translateY(-4px)}
+  .reel-embed .instagram-media{min-width:0!important;width:100%!important;margin:0!important;border-radius:10px!important}
 
   /* ---------- INTRO VIDÉO PLEINE LARGEUR ---------- */
   .intro{position:relative;overflow:hidden;min-height:80vh;display:flex;align-items:center;
@@ -343,6 +346,9 @@
       <a href="https://www.montblancautomobiles.com/" target="_blank" rel="noopener" aria-label="Mont Blanc Auto">
         <img src="logo-montblanc-auto.png" alt="Mont Blanc Auto" loading="lazy">
       </a>
+      <a href="https://www.mecanicus.com/" target="_blank" rel="noopener" aria-label="Mecanicus">
+        <img src="logo-mecanicus.png" alt="Mecanicus" loading="lazy">
+      </a>
     </div>
   </div>
 </section>
@@ -356,7 +362,7 @@
   </video>
   <div class="band-overlay"></div>
   <div class="band-content">
-    <span class="eyebrow reveal">Hugo Mottin présente</span>
+    <span class="eyebrow reveal">Hugo Mottin</span>
     <h2 class="reveal">Mes dernières vidéos</h2>
   </div>
 </section>
@@ -367,7 +373,8 @@
        DÉJÀ CÂBLÉ. Dépose une image poster dans ce dossier pour chaque film : film1.jpg, film2.jpg, ... film8.jpg.
        Chaque carte renvoie vers sa page (film1.html, film2.html, ...) où tu dois coller l'ID YouTube de la vidéo.
        Pas de code à modifier. Si une image manque, le fond gris s'affiche automatiquement. -->
-  <div class="subhead reveal" style="display:flex;justify-content:flex-end;gap:16px">
+  <div class="subhead reveal" style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+    <h3>Vidéo</h3>
     <div class="slider-arrows">
       <button class="arrow-btn" id="filmsPrev" aria-label="Vidéo précédente">&#8249;</button>
       <button class="arrow-btn" id="filmsNext" aria-label="Vidéo suivante">&#8250;</button>
@@ -439,6 +446,9 @@
 
 <!-- ================= ABOUT ================= -->
 <section class="about-section" id="about">
+  <div class="subhead reveal">
+    <h3>À propos</h3>
+  </div>
   <div class="about">
     <div class="reveal">
       <h2>Hugo Mottin,<br>vidéaste<br>automobile</h2>
@@ -458,46 +468,10 @@
 
 </section>
 
-<!-- ================= REELS (format vertical — Instagram / TikTok) ================= -->
-<section class="works-section" id="reels">
-  <div class="subhead reveal">
-    <h3>Reels</h3>
-  </div>
-  <!-- ===== REELS — embeds Instagram (lecture au clic, son inclus) =====
-       Pour changer un reel : remplace l'URL dans data-instgrm-permalink par le lien du reel souhaité. -->
-  <div class="reels-embeds reveal">
-    <div class="reel-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZXKsfIunpi/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
-        <a href="https://www.instagram.com/p/DZXKsfIunpi/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
-      </blockquote>
-    </div>
-    <div class="reel-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYm0tFoM8wq/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
-        <a href="https://www.instagram.com/p/DYm0tFoM8wq/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
-      </blockquote>
-    </div>
-    <div class="reel-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DY_qU0utXpX/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
-        <a href="https://www.instagram.com/p/DY_qU0utXpX/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
-      </blockquote>
-    </div>
-    <div class="reel-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaNOfWiOeV-/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
-        <a href="https://www.instagram.com/p/DaNOfWiOeV-/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
-      </blockquote>
-    </div>
-  </div>
-
-  <div class="works-cta reveal">
-    <a href="https://www.instagram.com/hugomottin/" target="_blank" rel="noopener" class="btn btn-ghost">Tout voir sur Instagram ↗</a>
-  </div>
-</section>
-
 <!-- ================= SERVICES ================= -->
 <section class="services" id="services">
-  <div class="sec-head reveal">
-    <div><span class="sec-tag">Services</span><h2>Ce que je propose</h2></div>
-    <p>De la vidéo unique à l'abonnement mensuel pour alimenter vos réseaux en continu.</p>
+  <div class="subhead reveal">
+    <h3>Services</h3>
   </div>
   <div class="svc-grid">
     <div class="svc reveal">
@@ -532,6 +506,41 @@
     <a href="mailto:mottin.hugo12@gmail.com">Email</a>
     <a href="https://www.instagram.com/hugomottin/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+  </div>
+</section>
+
+<!-- ================= REELS (format vertical — Instagram / TikTok) ================= -->
+<section class="works-section" id="reels">
+  <div class="subhead reveal">
+    <h3>Reels</h3>
+  </div>
+  <!-- ===== REELS — embeds Instagram (lecture au clic, son inclus) =====
+       Pour changer un reel : remplace l'URL dans data-instgrm-permalink par le lien du reel souhaité. -->
+  <div class="reels-embeds reveal">
+    <div class="reel-embed">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZXKsfIunpi/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
+        <a href="https://www.instagram.com/p/DZXKsfIunpi/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
+      </blockquote>
+    </div>
+    <div class="reel-embed">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYm0tFoM8wq/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
+        <a href="https://www.instagram.com/p/DYm0tFoM8wq/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
+      </blockquote>
+    </div>
+    <div class="reel-embed">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DY_qU0utXpX/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
+        <a href="https://www.instagram.com/p/DY_qU0utXpX/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
+      </blockquote>
+    </div>
+    <div class="reel-embed">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaNOfWiOeV-/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
+        <a href="https://www.instagram.com/p/DaNOfWiOeV-/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="works-cta reveal">
+    <a href="https://www.instagram.com/hugomottin/" target="_blank" rel="noopener" class="btn btn-ghost">Tout voir sur Instagram ↗</a>
   </div>
 </section>
 
