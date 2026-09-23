@@ -232,6 +232,13 @@
 
   /* ---------- SERVICES ---------- */
   .services{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+  .sector{position:relative;border-radius:14px;overflow:hidden;background:var(--card);
+    aspect-ratio:4/3;border:1px solid var(--line)}
+  .sector .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .sector .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.78))}
+  .sector-label{position:absolute;left:18px;bottom:16px;z-index:2;font-weight:800;font-size:16px;
+    text-transform:uppercase;letter-spacing:-.01em;color:#fff}
   .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .svc{border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:36px 30px;background:var(--ink);
     transition:.4s;position:relative;overflow:hidden}
@@ -244,7 +251,9 @@
     font-weight:900;font-size:150px;line-height:1;color:#fff;opacity:.07;letter-spacing:-.03em}
   .svc .num,.svc h3,.svc p{position:relative;z-index:1}
   .svc h3{font-weight:800;font-size:23px;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 12px;color:#fff}
-  .svc p{color:rgba(255,255,255,.65);font-size:15px;margin-bottom:18px}
+  .svc p{color:rgba(255,255,255,.65);font-size:15px;margin-bottom:14px}
+  .svc p:last-of-type{margin-bottom:18px}
+  .svc p b{color:#fff}
 
   /* ---------- CONTACT ---------- */
   .contact{text-align:center}
@@ -276,7 +285,7 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:900px){
-    .svc-grid,.reels-embeds{grid-template-columns:repeat(2,1fr)}
+    .svc-grid,.reels-embeds,.sectors-grid{grid-template-columns:repeat(2,1fr)}
     .about{grid-template-columns:1fr}
     .about-portrait{max-width:420px;order:-1}
     .hero{min-height:70vh;padding-top:110px}
@@ -294,7 +303,7 @@
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   }
   @media(max-width:560px){
-    .svc-grid,.reels-embeds{grid-template-columns:1fr}
+    .svc-grid,.reels-embeds,.sectors-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -471,21 +480,40 @@
   <div class="subhead reveal">
     <h3>Services</h3>
   </div>
+  <!-- ===== SECTEURS (photos) =====
+       Dépose une photo pour chaque secteur : secteur-presentation-vehicule.jpg, secteur-evenement-garage.jpg, secteur-focus-atelier.jpg.
+       Si une image manque, le fond gris s'affiche automatiquement. -->
+  <div class="sectors-grid reveal">
+    <div class="sector">
+      <div class="ph v2"></div><img class="ph" src="secteur-presentation-vehicule.jpg" alt="Présentation véhicule" onerror="this.style.display='none'"><div class="grad"></div>
+      <span class="sector-label">Présentation véhicule</span>
+    </div>
+    <div class="sector">
+      <div class="ph v4"></div><img class="ph" src="secteur-evenement-garage.jpg" alt="Événement garage" onerror="this.style.display='none'"><div class="grad"></div>
+      <span class="sector-label">Événement garage</span>
+    </div>
+    <div class="sector">
+      <div class="ph v6"></div><img class="ph" src="secteur-focus-atelier.jpg" alt="Focus atelier" onerror="this.style.display='none'"><div class="grad"></div>
+      <span class="sector-label">Focus atelier</span>
+    </div>
+  </div>
   <div class="svc-grid">
     <div class="svc reveal">
       <div class="num">01</div>
-      <h3>Reel<br>cinématique</h3>
-      <p>Une vidéo verticale de 15 à 45 s qui met en valeur une voiture : design, détails, son, ambiance. Prête à publier.</p>
+      <h3>Vidéo<br>véhicule</h3>
+      <p>Le tournage d'une seule voiture, pensée pour être mise en valeur.</p>
+      <p><b>Livrable :</b> 1 vidéo de 30 à 45 secondes, prête à publier sur vos réseaux sociaux ou votre site web.</p>
     </div>
     <div class="svc reveal">
       <div class="num">02</div>
-      <h3>Pack contenu<br>mensuel</h3>
-      <p>Plusieurs reels par mois, planifiés et livrés prêts à publier sur vos réseaux sociaux. Une gestion de contenu régulière, sans y penser.</p>
+      <h3>Pack<br>multi-véhicules</h3>
+      <p>Le tournage de plusieurs voitures en une seule session, pour présenter tout un stock ou une collection.</p>
+      <p><b>Livrable :</b> 1 vidéo de 30 à 45 secondes par véhicule, prête pour vos réseaux sociaux ou votre site web.</p>
     </div>
     <div class="svc reveal">
       <div class="num">03</div>
-      <h3>Vidéo<br>signature</h3>
-      <p>Une vidéo plus longue pour votre site ou vos campagnes, avec une vraie direction artistique.</p>
+      <h3>Accompagnement<br>mensuel</h3>
+      <p>Une collaboration sur la durée, pensée pour les garages et ateliers qui veulent une présence régulière sur les réseaux sociaux. Nous définissons ensemble vos besoins et vos objectifs, puis j'assure un suivi mensuel : tournages, création et publication de contenu.</p>
     </div>
   </div>
 </section>
