@@ -117,9 +117,9 @@
   @keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
 
   /* ---------- BANDE "PRÉSENTE" ---------- */
-  .presents-band{position:relative;overflow:hidden;background:#0d0d0d;color:#fff;
-    border-top:1px solid rgba(255,255,255,.12);
-    height:clamp(200px,26vw,320px);display:flex;align-items:center;justify-content:center}
+  .presents-band{position:relative;overflow:hidden;background:transparent;color:#fff;
+    height:clamp(200px,26vw,320px);display:flex;align-items:center;justify-content:center;
+    margin-bottom:clamp(24px,3vw,40px)}
   #works{padding-top:clamp(20px,2.5vw,32px)}
   .band-video{position:absolute;inset:0 clamp(20px,5vw,64px);width:calc(100% - clamp(40px,10vw,128px));
     height:100%;object-fit:cover;z-index:0;border-radius:14px}
@@ -354,21 +354,20 @@
 </section>
 
 <!-- ================= BANDE "PRÉSENTE" ================= -->
-<section class="presents-band">
-  <!-- VIDÉO DE BANDE : place ton fichier "presents.mp4" à côté de index.html (et "presents.jpg" comme image d'attente).
-       Tant qu'il n'y a pas de vidéo, le fond noir s'affiche automatiquement. -->
-  <video class="band-video" autoplay muted loop playsinline preload="metadata" poster="presents.jpg">
-    <source src="presents.mp4" type="video/mp4">
-  </video>
-  <div class="band-overlay"></div>
-  <div class="band-content">
-    <span class="eyebrow reveal">Hugo Mottin</span>
-    <h2 class="reveal">Mes dernières vidéos</h2>
-  </div>
-</section>
-
 <!-- ================= WORKS ================= -->
 <section class="works-section" id="works">
+  <div class="presents-band">
+    <!-- VIDÉO DE BANDE : place ton fichier "presents.mp4" à côté de index.html (et "presents.jpg" comme image d'attente).
+         Tant qu'il n'y a pas de vidéo, le fond noir s'affiche automatiquement. -->
+    <video class="band-video" autoplay muted loop playsinline preload="metadata" poster="presents.jpg">
+      <source src="presents.mp4" type="video/mp4">
+    </video>
+    <div class="band-overlay"></div>
+    <div class="band-content">
+      <span class="eyebrow reveal">Hugo Mottin</span>
+      <h2 class="reveal">Mes dernières vidéos</h2>
+    </div>
+  </div>
   <!-- ===== FILMS (slider format poster, cliquable) =====
        DÉJÀ CÂBLÉ. Dépose une image poster dans ce dossier pour chaque film : film1.jpg, film2.jpg, ... film8.jpg.
        Chaque carte renvoie vers sa page (film1.html, film2.html, ...) où tu dois coller l'ID YouTube de la vidéo.
