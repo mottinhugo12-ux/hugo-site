@@ -230,13 +230,18 @@
   /* ---------- SERVICES ---------- */
   .services{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .svc{border:1px solid var(--line);border-radius:14px;padding:36px 30px;background:#fff;
+  .svc{border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:36px 30px;background:var(--ink);
     transition:.4s;position:relative;overflow:hidden}
-  .svc:hover{transform:translateY(-6px);border-color:rgba(0,0,0,.45);box-shadow:0 16px 40px rgba(0,0,0,.06)}
-  .svc .num{position:absolute;top:-18px;right:8px;z-index:-1;
-    font-weight:900;font-size:140px;line-height:1;color:var(--ink);opacity:.09;letter-spacing:-.03em}
-  .svc h3{font-weight:800;font-size:23px;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 12px}
-  .svc p{color:var(--muted);font-size:15px;margin-bottom:18px}
+  .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+    opacity:0;transition:opacity .4s}
+  .svc:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.35);box-shadow:0 20px 44px rgba(0,0,0,.35)}
+  .svc:hover::before{opacity:1}
+  .svc .num{position:absolute;bottom:-30px;right:2px;z-index:0;
+    font-weight:900;font-size:150px;line-height:1;color:#fff;opacity:.07;letter-spacing:-.03em}
+  .svc .num,.svc h3,.svc p{position:relative;z-index:1}
+  .svc h3{font-weight:800;font-size:23px;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 12px;color:#fff}
+  .svc p{color:rgba(255,255,255,.65);font-size:15px;margin-bottom:18px}
 
   /* ---------- CONTACT ---------- */
   .contact{text-align:center}
@@ -436,7 +441,6 @@
 <section class="about-section" id="about">
   <div class="about">
     <div class="reveal">
-      <span class="sec-tag">Mes services</span>
       <h2>Hugo Mottin,<br>vidéaste<br>automobile</h2>
       <!-- ÉCRIS TON TEXTE ICI : remplace le contenu des <p> ci-dessous par ta propre histoire
            (ton parcours, ce qui t'a amené à la vidéo auto, ta façon de filmer…). -->
