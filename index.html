@@ -119,8 +119,10 @@
   /* ---------- BANDE "PRÉSENTE" ---------- */
   .presents-band{position:relative;overflow:hidden;background:#0d0d0d;color:#fff;
     height:clamp(200px,26vw,320px);display:flex;align-items:center;justify-content:center}
-  .band-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .band-overlay{position:absolute;inset:0;z-index:1;
+  #works{padding-top:clamp(20px,2.5vw,32px)}
+  .band-video{position:absolute;inset:0 clamp(20px,5vw,64px);width:calc(100% - clamp(40px,10vw,128px));
+    height:100%;object-fit:cover;z-index:0;border-radius:14px}
+  .band-overlay{position:absolute;inset:0 clamp(20px,5vw,64px);z-index:1;border-radius:14px;
     background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55))}
   .band-content{position:relative;z-index:2;text-align:center;
     display:flex;flex-direction:column;align-items:center;gap:22px;padding:0 20px}
@@ -370,8 +372,7 @@
        DÉJÀ CÂBLÉ. Dépose une image poster dans ce dossier pour chaque film : film1.jpg, film2.jpg, ... film8.jpg.
        Chaque carte renvoie vers sa page (film1.html, film2.html, ...) où tu dois coller l'ID YouTube de la vidéo.
        Pas de code à modifier. Si une image manque, le fond gris s'affiche automatiquement. -->
-  <div class="subhead reveal" style="display:flex;justify-content:space-between;align-items:center;gap:16px">
-    <h3>Vidéo</h3>
+  <div class="subhead reveal" style="display:flex;justify-content:flex-end;gap:16px;margin-bottom:8px">
     <div class="slider-arrows">
       <button class="arrow-btn" id="filmsPrev" aria-label="Vidéo précédente">&#8249;</button>
       <button class="arrow-btn" id="filmsNext" aria-label="Vidéo suivante">&#8250;</button>
