@@ -57,23 +57,23 @@
   header{position:fixed;top:0;left:0;right:0;z-index:100;
     display:flex;align-items:center;justify-content:space-between;
     padding:22px clamp(20px,5vw,64px);
-    transition:background .4s ease,padding .4s ease,border-color .4s;
-    color:#fff;background:#0d0d0d;border-bottom:1px solid rgba(255,255,255,.12)}
-  header.scrolled{background:rgba(13,13,13,.92);backdrop-filter:blur(14px);
-    padding-top:16px;padding-bottom:16px}
+    transition:background .4s ease,padding .4s ease,border-color .4s,box-shadow .4s;
+    color:var(--ink);background:#fff;border-bottom:1px solid var(--line)}
+  header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);
+    padding-top:16px;padding-bottom:16px;box-shadow:0 2px 20px rgba(0,0,0,.04)}
   .brand{font-weight:800;letter-spacing:.14em;font-size:15px;color:inherit}
   .brand span{color:inherit}
   nav{display:flex;gap:34px;align-items:center}
-  nav a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.82);
+  nav a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
     font-weight:500;transition:color .25s;position:relative}
-  nav a:hover{color:#fff}
+  nav a:hover{color:var(--muted)}
   nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
     background:var(--gold);transition:width .3s}
   nav a:hover::after{width:100%}
-  .nav-cta{border:1px solid rgba(255,255,255,.4);padding:9px 18px;border-radius:40px;color:#fff!important}
-  .nav-cta:hover{background:#fff;border-color:#fff;color:var(--ink)!important}
+  .nav-cta{border:1px solid var(--line);padding:9px 18px;border-radius:40px;color:var(--ink)!important}
+  .nav-cta:hover{background:var(--ink);border-color:var(--ink);color:#fff!important}
   .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:6px}
-  .burger span{width:24px;height:2px;background:#fff;transition:.3s}
+  .burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
 
   /* ---------- HERO ---------- */
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
@@ -106,11 +106,33 @@
   .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.18)}
   .btn-ghost{border:1px solid var(--line);color:var(--ink)}
   .btn-ghost:hover{border-color:var(--ink);transform:translateY(-3px)}
+  .hero-mark{position:absolute;bottom:92px;left:50%;transform:translateX(-50%);z-index:2;
+    width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.6);
+    background:rgba(0,0,0,.25);backdrop-filter:blur(6px);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:13px;letter-spacing:.04em}
   .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;
     font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
     display:flex;flex-direction:column;align-items:center;gap:10px}
   .scroll-cue i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}
   @keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+  /* ---------- BANDE "PRÉSENTE" ---------- */
+  .presents-band{position:relative;overflow:hidden;background:#0d0d0d;color:#fff;
+    height:clamp(200px,26vw,320px);display:flex;align-items:center;justify-content:center}
+  .band-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .band-overlay{position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55))}
+  .band-content{position:relative;z-index:2;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:22px;padding:0 20px}
+  .presents-band .eyebrow{color:#fff;margin-bottom:0}
+  .presents-band .eyebrow::before{background:#fff}
+  .presents-band h2{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;
+    font-size:clamp(26px,4.5vw,44px);line-height:1.05}
+  .presents-band .btn-outline{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.5);
+    color:#fff;padding:15px 28px;border-radius:40px;font-size:13px;letter-spacing:.06em;
+    text-transform:uppercase;font-weight:500;transition:.3s}
+  .presents-band .btn-outline:hover{background:#fff;border-color:#fff;color:var(--ink);transform:translateY(-3px)}
 
   /* ---------- PARTNERS / GARAGES ---------- */
   .partners{background:#0d0d0d;padding:clamp(40px,6vw,64px) clamp(20px,5vw,64px)}
@@ -126,7 +148,8 @@
   /* ---------- SECTIONS ---------- */
   section{padding:clamp(70px,11vw,150px) clamp(20px,5vw,64px);position:relative}
   .works-section{padding-bottom:clamp(40px,5vw,70px)}
-  .about-section{padding-top:clamp(40px,5vw,70px)}
+  .about-section{padding-top:clamp(40px,5vw,70px);padding-bottom:clamp(20px,3vw,50px)}
+  #reels{padding-top:clamp(20px,3vw,50px)}
   .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
     margin-bottom:54px;flex-wrap:wrap}
   .sec-head h2{font-weight:800;font-size:clamp(28px,4.5vw,56px);
@@ -135,11 +158,23 @@
   .sec-head p{color:var(--muted);max-width:360px;font-size:15px}
 
   /* ---------- WORKS GRID ---------- */
-  .works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .films{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:0 auto 64px;max-width:1100px}
-  .work{position:relative;border-radius:14px;overflow:hidden;background:var(--card);
+  .films{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    margin:0 0 64px;padding-bottom:4px;-ms-overflow-style:none;scrollbar-width:none}
+  .films::-webkit-scrollbar{display:none}
+  .films .work{flex:0 0 min(320px,68vw);scroll-snap-align:start}
+  .slider-arrows{display:flex;gap:10px}
+  .arrow-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;
+    font-size:22px;line-height:1;cursor:pointer;transition:.3s;display:inline-flex;
+    align-items:center;justify-content:center;color:var(--ink)}
+  .arrow-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .work{display:block;position:relative;border-radius:0;overflow:hidden;background:var(--card);
     aspect-ratio:9/16;cursor:pointer;border:1px solid var(--line)}
-  .work--wide{aspect-ratio:1920/1080;cursor:default}
+  .work--poster{aspect-ratio:9/16;cursor:pointer}
+  .work-mark{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);z-index:3;
+    width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
+    background:rgba(0,0,0,.35);backdrop-filter:blur(4px);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:11px;letter-spacing:.02em}
   .subhead{margin:0 0 26px}
   .subhead h3{font-weight:800;font-size:clamp(20px,2.6vw,30px);text-transform:uppercase;letter-spacing:-.01em}
   .subhead .sec-tag{display:block;margin-bottom:8px}
@@ -149,16 +184,6 @@
   .work .meta{position:absolute;left:18px;right:18px;bottom:18px;z-index:3}
   .work .meta .t{font-weight:800;font-size:19px;text-transform:uppercase;color:#fff}
   .work .meta .s{font-size:12px;color:rgba(255,255,255,.72);letter-spacing:.08em;margin-top:3px}
-  .work .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.7);
-    width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.22);
-    backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.55);
-    display:flex;align-items:center;justify-content:center;opacity:0;transition:.4s;z-index:3}
-  .work:hover .play{opacity:1;transform:translate(-50%,-50%) scale(1)}
-  .work .play::after{content:"";border-left:14px solid #fff;border-top:9px solid transparent;
-    border-bottom:9px solid transparent;margin-left:4px}
-  .tagchip{position:absolute;top:16px;left:16px;z-index:3;font-size:10px;letter-spacing:.12em;
-    text-transform:uppercase;font-weight:600;background:rgba(255,255,255,.85);
-    padding:5px 10px;border-radius:30px;color:var(--ink)}
   /* placeholder visuals (grayscale), remplace par tes vraies vidéos */
   .v1{background:linear-gradient(135deg,#b3b3b1,#3a3a3a 78%),radial-gradient(circle at 30% 25%,rgba(255,255,255,.25),transparent 50%)}
   .v2{background:linear-gradient(135deg,#9a9a98,#2c2c2c 78%),radial-gradient(circle at 70% 30%,rgba(255,255,255,.2),transparent 50%)}
@@ -168,10 +193,25 @@
   .v6{background:linear-gradient(135deg,#828280,#1f1f1f 78%),radial-gradient(circle at 70% 65%,rgba(255,255,255,.18),transparent 50%)}
   .works-cta{margin-top:46px;text-align:center}
   /* embeds Instagram */
-  .reels-intro{max-width:600px;color:var(--muted);font-size:16px;margin:-24px 0 32px}
   .reels-embeds{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:flex-start}
   .reel-embed{width:100%}
   .reel-embed .instagram-media{min-width:0!important;width:100%!important;margin:0!important;border-radius:14px!important}
+
+  /* ---------- INTRO VIDÉO PLEINE LARGEUR ---------- */
+  .intro{position:relative;overflow:hidden;min-height:80vh;display:flex;align-items:center;
+    padding:clamp(50px,8vw,90px) clamp(20px,5vw,64px);margin-top:clamp(50px,7vw,90px);background:#0d0d0d}
+  .intro-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .intro-overlay{position:absolute;inset:0;z-index:1;
+    background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.3) 55%,rgba(0,0,0,.05) 100%)}
+  .intro-text{position:relative;z-index:2;max-width:600px}
+  .intro-text .eyebrow{color:#fff}
+  .intro-text .eyebrow::before{background:#fff}
+  .intro-text h2{font-weight:900;line-height:.97;letter-spacing:-.02em;text-transform:uppercase;
+    font-size:clamp(30px,5vw,60px);margin:20px 0 22px;color:#fff}
+  .intro-text h2 em{font-style:normal;color:#fff}
+  .intro-text p{max-width:480px;color:rgba(255,255,255,.8);font-size:16px;margin-bottom:30px}
+  .intro-text .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+  .intro-text .btn-ghost:hover{border-color:#fff}
 
   /* ---------- ABOUT ---------- */
   .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:center}
@@ -184,10 +224,6 @@
   .about h2{font-weight:800;font-size:clamp(26px,3.6vw,46px);
     text-transform:uppercase;line-height:1.05;letter-spacing:-.02em;margin-bottom:24px}
   .about p{color:var(--muted);margin-bottom:18px;font-size:16px}
-  .about .stats{display:flex;gap:40px;margin-top:34px;flex-wrap:wrap}
-  .stat .n{font-weight:800;font-size:34px;color:var(--gold)}
-  .stat .l{font-size:12px;letter-spacing:.10em;text-transform:uppercase;color:var(--muted)}
-
 
   /* ---------- SERVICES ---------- */
   .services{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -198,8 +234,6 @@
   .svc .num{font-weight:700;font-size:14px;color:var(--gold);letter-spacing:.08em}
   .svc h3{font-weight:800;font-size:23px;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 12px}
   .svc p{color:var(--muted);font-size:15px;margin-bottom:18px}
-  .svc .price{font-size:14px;color:var(--ink);letter-spacing:.02em}
-  .svc .price b{color:var(--gold)}
 
   /* ---------- CONTACT ---------- */
   .contact{text-align:center}
@@ -231,9 +265,11 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:900px){
-    .works,.svc-grid,.reels-embeds{grid-template-columns:repeat(2,1fr)}
+    .svc-grid,.reels-embeds{grid-template-columns:repeat(2,1fr)}
     .about{grid-template-columns:1fr}
     .about-portrait{max-width:420px;order:-1}
+    .hero{min-height:70vh;padding-top:110px}
+    .intro{min-height:60vh}
     nav{position:fixed;inset:0 0 0 auto;width:74%;max-width:320px;background:#fff;
       flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);
       transition:transform .4s;border-left:1px solid var(--line);z-index:120}
@@ -247,9 +283,7 @@
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   }
   @media(max-width:560px){
-    .works,.svc-grid,.films,.reels-embeds{grid-template-columns:1fr}
-    .work{aspect-ratio:4/5}
-    .work--wide{aspect-ratio:1920/1080}
+    .svc-grid,.reels-embeds{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -273,20 +307,26 @@
   <!-- VIDÉO DE FOND : place ton fichier "hero.mp4" à côté de index.html (et "hero.jpg" comme image d'attente).
        Décommente la balise <source> ci-dessous une fois ton fichier prêt. Tant qu'il n'y a pas de vidéo,
        le dégradé clair s'affiche automatiquement. Utilise une vidéo courte, muette, en boucle (max ~10-15 Mo). -->
-  <video class="hero-video" autoplay muted loop playsinline poster="hero.jpg">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="hero.jpg">
     <source src="hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
-  <div class="hero-inner reveal">
-    <span class="eyebrow">Vidéaste automobile · Paris · Rhône-Alpes · Côte d'Azur</span>
-    <h1>Vidéos<br><em>automobiles</em><br>cinématiques</h1>
-    <p>Je transforme vos voitures d'exception en contenus vidéo qui captent l'attention, racontent une histoire et font vivre vos réseaux sociaux.</p>
-    <div class="hero-actions">
-      <a href="#works" class="btn btn-primary">Voir mes vidéos</a>
-      <a href="#contact" class="btn btn-ghost">Travaillons ensemble</a>
-    </div>
-  </div>
   <div class="scroll-cue"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- ================= BANDE "PRÉSENTE" ================= -->
+<section class="presents-band">
+  <!-- VIDÉO DE BANDE : place ton fichier "presents.mp4" à côté de index.html (et "presents.jpg" comme image d'attente).
+       Tant qu'il n'y a pas de vidéo, le fond noir s'affiche automatiquement. -->
+  <video class="band-video" autoplay muted loop playsinline preload="metadata" poster="presents.jpg">
+    <source src="presents.mp4" type="video/mp4">
+  </video>
+  <div class="band-overlay"></div>
+  <div class="band-content">
+    <span class="eyebrow reveal">Hugo Mottin présente</span>
+    <h2 class="reveal">Mes dernières vidéos</h2>
+    <a href="#works" class="btn-outline reveal">Voir toutes les vidéos</a>
+  </div>
 </section>
 
 <!-- ================= PARTNERS / GARAGES ================= -->
@@ -312,46 +352,102 @@
 
 <!-- ================= WORKS ================= -->
 <section class="works-section" id="works">
-  <div class="sec-head reveal">
+  <!-- ===== FILMS (slider format poster, cliquable) =====
+       DÉJÀ CÂBLÉ. Dépose une image poster dans ce dossier pour chaque film : film1.jpg, film2.jpg, ... film8.jpg.
+       Chaque carte renvoie vers sa page (film1.html, film2.html, ...) où tu dois coller l'ID YouTube de la vidéo.
+       Pas de code à modifier. Si une image manque, le fond gris s'affiche automatiquement. -->
+  <div class="subhead reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
     <div>
-      <span class="sec-tag">Sélection</span>
-      <h2>Mon travail</h2>
+      <h3>Vidéos</h3>
     </div>
-    <p>Vidéos horizontales pour le web et reels verticaux pour les réseaux sociaux.</p>
+    <div class="slider-arrows">
+      <button class="arrow-btn" id="filmsPrev" aria-label="Vidéo précédente">&#8249;</button>
+      <button class="arrow-btn" id="filmsNext" aria-label="Vidéo suivante">&#8250;</button>
+    </div>
+  </div>
+  <div class="films" id="filmsSlider">
+    <a class="work work--poster reveal" href="film1.html">
+      <div class="ph v2"></div><img class="ph" src="film1.jpg" alt="Analog Automobile" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film2.html">
+      <div class="ph v4"></div><img class="ph" src="film2.jpg" alt="Vidéo éditorial" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film3.html">
+      <div class="ph v6"></div><img class="ph" src="film3.jpg" alt="Iconic" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film4.html">
+      <div class="ph v1"></div><img class="ph" src="film4.jpg" alt="Vidéo éditorial" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film5.html">
+      <div class="ph v3"></div><img class="ph" src="film5.jpg" alt="Vidéo éditorial" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film6.html">
+      <div class="ph v5"></div><img class="ph" src="film6.jpg" alt="Vidéo éditorial" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film7.html">
+      <div class="ph v2"></div><img class="ph" src="film7.jpg" alt="Vidéo éditorial" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film8.html">
+      <div class="ph v4"></div><img class="ph" src="film8.jpg" alt="Vidéo éditorial" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="work-mark">HM</div>
+    </a>
   </div>
 
-  <!-- ===== FILMS 16:9 (format horizontal) =====
-       DÉJÀ CÂBLÉ. Dépose simplement dans ce dossier : film1.mp4 + film1.jpg, film2.mp4 + film2.jpg, film3.mp4 + film3.jpg, film4.mp4 + film4.jpg.
-       Pas de code à modifier. Si un fichier manque, le fond gris s'affiche automatiquement. -->
+  <!-- ===== PRÉSENTATION (vidéo pleine largeur + texte par-dessus) =====
+       VIDÉO : place ton fichier "intro.mp4" à côté de index.html (et "intro.jpg" comme image d'attente).
+       Tant qu'il n'y a pas de vidéo, le fond noir s'affiche automatiquement. -->
+  <div class="intro reveal">
+    <video class="intro-video" autoplay muted loop playsinline preload="metadata" poster="intro.jpg">
+      <source src="intro.mp4" type="video/mp4">
+    </video>
+    <div class="intro-overlay"></div>
+    <div class="intro-text">
+      <span class="eyebrow">Vidéaste automobile · Paris · Rhône-Alpes · Côte d'Azur</span>
+      <h2>Vidéos<br><em>automobiles</em><br>cinématiques</h2>
+      <p>Je transforme vos voitures d'exception en contenus vidéo qui captent l'attention, racontent une histoire et font vivre vos réseaux sociaux.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary">Voir mes services</a>
+        <a href="#contact" class="btn btn-ghost">Travaillons ensemble</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about-section" id="about">
+  <div class="about">
+    <div class="reveal">
+      <span class="sec-tag">Mes services</span>
+      <h2>Hugo Mottin,<br>vidéaste<br>automobile</h2>
+      <!-- ÉCRIS TON TEXTE ICI : remplace le contenu des <p> ci-dessous par ta propre histoire
+           (ton parcours, ce qui t'a amené à la vidéo auto, ta façon de filmer…). -->
+      <p>Je réalise des vidéos cinématiques de voitures d'exception, classiques comme récentes, pensées pour faire connaître votre activité et attirer de nouveaux clients.</p>
+      <p>Mon approche est simple. Je filme ce qui rend chaque voiture unique, la lumière sur ses lignes, le son de son moteur, le soin apporté à chaque détail. Ce sont ces images qui retiennent l'attention sur les réseaux et qui montrent à vos futurs clients la qualité de votre travail avant même qu'ils vous contactent.</p>
+      <p>Je prends en charge l'ensemble du projet. Nous définissons ensemble ce que vous voulez mettre en avant, je viens tourner sur place, puis je m'occupe du montage et de l'étalonnage. Vous recevez une vidéo finalisée, prête à être publiée sur vos réseaux comme sur votre site.</p>
+    </div>
+    <!-- TA PHOTO : place ton fichier "moi.jpg" dans le même dossier que index.html.
+         Tant qu'il n'existe pas, un fond gris s'affiche. Format conseillé : portrait vertical (4:5). -->
+    <div class="about-portrait reveal">
+      <img src="moi.jpg" alt="Hugo Mottin" onerror="this.style.display='none'">
+      <span>Hugo Mottin · @hugomottin</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= REELS (format vertical — Instagram / TikTok) ================= -->
+<section class="works-section" id="reels">
   <div class="subhead reveal">
-    <span class="sec-tag">Format horizontal</span>
-    <h3>Vidéos</h3>
-  </div>
-  <div class="films">
-    <div class="work work--wide reveal">
-      <div class="ph v2"></div><video class="ph" src="film1.mp4" autoplay muted loop playsinline poster="film1.jpg" onerror="this.style.display='none'"></video><div class="grad"></div><span class="tagchip">Vidéo</span>
-      <div class="meta"><div class="t">Analog Automobile</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
-    </div>
-    <div class="work work--wide reveal">
-      <div class="ph v4"></div><video class="ph" src="film2.mp4" autoplay muted loop playsinline poster="film2.jpg" onerror="this.style.display='none'"></video><div class="grad"></div><span class="tagchip">Vidéo</span>
-      <div class="meta"><div class="t">Vidéo éditorial</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
-    </div>
-    <div class="work work--wide reveal">
-      <div class="ph v6"></div><video class="ph" src="film3.mp4" autoplay muted loop playsinline poster="film3.jpg" onerror="this.style.display='none'"></video><div class="grad"></div><span class="tagchip">Vidéo</span>
-      <div class="meta"><div class="t">Iconic</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
-    </div>
-    <div class="work work--wide reveal">
-      <div class="ph v1"></div><video class="ph" src="film4.mp4" autoplay muted loop playsinline poster="film4.jpg" onerror="this.style.display='none'"></video><div class="grad"></div><span class="tagchip">Vidéo</span>
-      <div class="meta"><div class="t">Vidéo éditorial</div><div class="s">Format 16:9, réseaux sociaux ou website</div></div>
-    </div>
-  </div>
-
-  <!-- ===== REELS 9:16 (format vertical — Instagram / TikTok) ===== -->
-  <div class="subhead reveal" style="margin-top:8px">
-    <span class="sec-tag">Format vertical</span>
     <h3>Reels</h3>
   </div>
-  <p class="reels-intro reveal">Des vidéos engageantes à grande portée pour faire découvrir vos voitures au plus grand nombre.</p>
   <!-- ===== REELS — embeds Instagram (lecture au clic, son inclus) =====
        Pour changer un reel : remplace l'URL dans data-instgrm-permalink par le lien du reel souhaité. -->
   <div class="reels-embeds reveal">
@@ -380,29 +476,6 @@
   <div class="works-cta reveal">
     <a href="https://www.instagram.com/hugomottin/" target="_blank" rel="noopener" class="btn btn-ghost">Tout voir sur Instagram ↗</a>
   </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section class="about-section" id="about">
-  <div class="about">
-    <div class="reveal">
-      <span class="sec-tag">Mes services</span>
-      <h2>Hugo Mottin,<br>vidéaste<br>automobile</h2>
-      <!-- ÉCRIS TON TEXTE ICI : remplace le contenu des <p> ci-dessous par ta propre histoire
-           (ton parcours, ce qui t'a amené à la vidéo auto, ta façon de filmer…). -->
-      <p>Une belle voiture ne se résume jamais à une fiche technique. Elle a une présence, une histoire et une manière bien à elle d'accrocher le regard, et c'est précisément ce que mon métier consiste à saisir pour le transformer en une vidéo qui donne envie de s'arrêter.</p>
-      <p>Je filme les voitures d'exception, aussi bien classiques que récentes, avec un regard cinématique et nostalgique qui cherche toujours le détail qui fait la différence. La ligne qui se dessine dans la lumière, le reflet qui glisse sur une carrosserie, le grain d'un cuir ou le son d'un moteur au démarrage deviennent autant de raisons de regarder l'image jusqu'au bout plutôt que de la faire défiler.</p>
-      <p>Concrètement, je prends en charge l'ensemble du projet, de la première idée jusqu'au rendu final. Nous définissons ensemble l'intention et l'histoire à raconter, je viens tourner sur place, puis je monte et j'étalonne chaque plan pour lui donner une véritable identité. Vous recevez au bout du compte une vidéo prête à être publiée, pensée aussi bien pour les réseaux sociaux que pour votre site.</p>
-      <p>Car une vidéo, aujourd'hui, ne se limite plus à une belle image. C'est un véritable levier de visibilité, capable de placer votre atelier devant des passionnés que vous n'auriez jamais atteints autrement. Un format court et bien construit peut réunir des dizaines, parfois des centaines de milliers de vues, et attirer vers vous des clients qui vous découvrent d'abord par une émotion, avant même de pousser votre porte. C'est un savoir faire que je maîtrise et que j'ai déjà mis à l'épreuve, avec un projet lancé de toutes pièces qui a dépassé le million d'abonnés en un an et connu des passages sur TF1, M6 et France 2.</p>
-    </div>
-    <!-- TA PHOTO : place ton fichier "moi.jpg" dans le même dossier que index.html.
-         Tant qu'il n'existe pas, un fond gris s'affiche. Format conseillé : portrait vertical (4:5). -->
-    <div class="about-portrait reveal">
-      <img src="moi.jpg" alt="Hugo Mottin" onerror="this.style.display='none'">
-      <span>Hugo Mottin · @hugomottin</span>
-    </div>
-  </div>
-
 </section>
 
 <!-- ================= SERVICES ================= -->
@@ -469,6 +542,16 @@
     el.style.transitionDelay = (i % 6 * 0.06) + 's';
     io.observe(el);
   });
+  const filmsSlider = document.getElementById('filmsSlider');
+  if (filmsSlider) {
+    const scrollByCard = (dir) => {
+      const card = filmsSlider.querySelector('.work');
+      const amount = card ? card.getBoundingClientRect().width + 18 : 400;
+      filmsSlider.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    };
+    document.getElementById('filmsPrev').addEventListener('click', () => scrollByCard(-1));
+    document.getElementById('filmsNext').addEventListener('click', () => scrollByCard(1));
+  }
 </script>
 <!-- Script Instagram : transforme les liens reels en vidéos lisibles directement sur le site -->
 <script async src="https://www.instagram.com/embed.js"></script>
