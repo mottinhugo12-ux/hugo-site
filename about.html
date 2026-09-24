@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos | Hugo Mottin, vidéaste automobile</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://hugomottin.com/about.html">
+<meta property="og:title" content="À propos | Hugo Mottin, vidéaste automobile">
+<meta property="og:description" content="Hugo Mottin, vidéaste automobile basé à Paris et en Rhône-Alpes, intervenant aussi sur la Côte d'Azur. Parcours, approche et coordonnées de contact.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://hugomottin.com/about.html">
+<meta property="og:image" content="https://hugomottin.com/moi.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Hugo Mottin, vidéaste automobile basé à Paris et en Rhône-Alpes, intervenant aussi sur la Côte d'Azur. Parcours, approche et coordonnées de contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --ink:#0d0d0d; --muted:#777771;
+    --line:rgba(0,0,0,.12);
+    --sans:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;
+       line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px clamp(20px,5vw,64px);color:var(--ink);background:#fff;border-bottom:1px solid var(--line)}
+  .brand{font-weight:800;letter-spacing:.14em;font-size:15px;color:inherit}
+  nav{display:flex;gap:34px;align-items:center}
+  nav a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-weight:500}
+  .nav-cta{border:1px solid var(--line);padding:9px 18px;border-radius:40px}
+
+  /* ---------- HERO SOMBRE ---------- */
+  .about-hero{background:#0d0d0d;color:#fff;padding:150px clamp(20px,5vw,64px) 20px}
+  .about-hero-in{max-width:1080px;margin:0 auto}
+  .back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:34px}
+  .back-link:hover{color:#fff}
+  .tag{font-size:12px;letter-spacing:.20em;text-transform:uppercase;color:rgba(255,255,255,.6);
+    font-weight:600;display:block;margin-bottom:18px}
+  h1{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;
+    font-size:clamp(40px,8vw,88px);line-height:.95;margin-bottom:56px}
+
+  .about-copy{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);margin-bottom:0}
+  .about-copy p{color:rgba(255,255,255,.75);font-size:17px;margin-bottom:26px}
+  .about-copy p:last-child{margin-bottom:0}
+
+  /* ---------- CONTACT "DISCUTONS" ---------- */
+  .talk{background:#0d0d0d;color:#fff;padding:0 clamp(20px,5vw,64px) 110px}
+  .talk-in{max-width:1080px;margin:0 auto}
+  .talk h2{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;
+    font-size:clamp(30px,5vw,52px);line-height:1;margin-bottom:14px}
+  .talk p.sub{color:rgba(255,255,255,.6);font-size:16px;margin-bottom:26px}
+  .talk-links{display:flex;gap:34px;flex-wrap:wrap;margin-bottom:26px}
+  .talk-link{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:#fff;
+    border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:4px;transition:.25s}
+  .talk-link:hover{border-color:#fff;color:rgba(255,255,255,.8)}
+  .talk-link svg{width:18px;height:18px;flex-shrink:0}
+  .talk-zone{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+  .talk-zone strong{display:block;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.75);
+    text-transform:none;font-weight:600;margin-bottom:8px}
+
+  footer{padding:40px clamp(20px,5vw,64px);border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+    font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  footer .brand{font-size:13px;color:var(--ink)}
+
+  @media(max-width:800px){
+    .about-copy{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .talk-in{flex-direction:column;text-align:center}
+    .talk-links{justify-content:center}
+  }
+  @media(max-width:560px){
+    nav{display:none}
+    .talk-links{flex-direction:column;gap:22px;align-items:center}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html#top" class="brand">HUGO <span>MOTTIN</span></a>
+  <nav>
+    <a href="index.html#works">Réalisations</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="about.html">À propos</a>
+    <a href="https://www.instagram.com/hugomottin/" target="_blank" rel="noopener" class="nav-cta">Instagram ↗</a>
+  </nav>
+</header>
+
+<section class="about-hero">
+  <div class="about-hero-in">
+    <a href="index.html#top" class="back-link">&larr; Retour à l'accueil</a>
+    <span class="tag">Vidéaste automobile</span>
+    <h1>À propos</h1>
+    <div class="about-copy">
+      <!-- ÉCRIS TON TEXTE ICI si tu veux personnaliser encore plus : une anecdote sur tes débuts,
+           un projet marquant... remplace simplement le contenu des <p>. -->
+      <div>
+        <p>Je suis vidéaste automobile, et je vis de la vidéo depuis maintenant 3 ans. Je me suis spécialisé dans les voitures d'exception, classiques comme récentes, en aidant les garages, ateliers et concessions à donner à leur travail une image à la hauteur de ce qu'il mérite.</p>
+        <p>Avant la vidéo, j'étais en études. Ma passion pour les voitures s'est construite seul, au fil du temps, à force de regarder, de filmer et de m'intéresser à ce qui rend chaque modèle unique. Cette curiosité s'est transformée en véritable métier : ne pas seulement documenter une voiture, mais raconter ce qui la rend exceptionnelle.</p>
+        <p>Basé à Paris et en Rhône-Alpes, je me déplace aussi sur la Côte d'Azur pour capter chaque voiture dans son meilleur environnement.</p>
+      </div>
+      <div>
+        <p>Sur un plateau d'exposition, dans un atelier ou lors d'un événement, l'objectif reste le même : livrer des images qui marquent, immersives et soignées jusqu'au moindre détail.</p>
+        <p>Je privilégie les collaborations construites dans la durée plutôt que les tournages ponctuels. Travailler sur plusieurs projets avec les mêmes garages et ateliers me permet de vraiment comprendre leur identité, et de produire un contenu cohérent, qui leur ressemble.</p>
+        <p>Mon style est guidé par la précision et le souci du détail : capter l'essence d'une voiture d'une façon qui donne envie de s'arrêter dessus, que ce soit sur les réseaux ou sur un site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="talk">
+  <div class="talk-in">
+    <div class="talk-info">
+      <h2>Discutons de votre projet</h2>
+      <p class="sub">Une vidéo en tête ? Un échange rapide suffit pour en parler.</p>
+      <div class="talk-links">
+        <a href="mailto:mottin.hugo12@gmail.com" class="talk-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+          mottin.hugo12@gmail.com
+        </a>
+        <a href="tel:+33603721383" class="talk-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+          06 03 72 13 83
+        </a>
+      </div>
+      <div class="talk-zone">
+        <strong>Zone d'intervention</strong>
+        Paris · Rhône-Alpes · Côte d'Azur
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="brand">HUGO <span>MOTTIN</span></span>
+  <span>© <span id="yr"></span> · Vidéos automobiles cinématiques</span>
+  <span>Paris · Rhône-Alpes · Côte d'Azur</span>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -5,10 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Porsche Cayman GT4 — Vidéo | Hugo Mottin</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://hugomottin.com/film7.html">
+<meta property="og:title" content="Porsche Cayman GT4 — Vidéo | Hugo Mottin">
+<meta property="og:description" content="Vidéo automobile de Porsche Cayman GT4, réalisée pour Iconic, Atelier des Légendes par Hugo Mottin, vidéaste automobile à Paris, en Rhône-Alpes et sur la Côte d'Azur.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://hugomottin.com/film7.html">
+<meta property="og:image" content="https://hugomottin.com/film7.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="Vidéo automobile de Porsche Cayman GT4, réalisée pour Iconic, Atelier des Légendes par Hugo Mottin, vidéaste automobile à Paris, en Rhône-Alpes et sur la Côte d'Azur.">
-<meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -42,6 +48,14 @@
   .video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden}
   .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
+  .film-cta{margin-top:48px;padding-top:40px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .film-cta p{font-size:16px;color:var(--ink);font-weight:600;max-width:420px;margin:0}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:40px;
+    font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;transition:.3s}
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.18)}
+
   footer{padding:40px clamp(20px,5vw,64px);border-top:1px solid var(--line);
     display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
     font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -55,9 +69,9 @@
   <a href="index.html#top" class="brand">HUGO <span>MOTTIN</span></a>
   <nav>
     <a href="index.html#works">Réalisations</a>
-    <a href="index.html#about">À propos</a>
     <a href="index.html#services">Services</a>
     <a href="index.html#contact">Contact</a>
+    <a href="about.html">À propos</a>
     <a href="https://www.instagram.com/hugomottin/" target="_blank" rel="noopener" class="nav-cta">Instagram ↗</a>
   </nav>
 </header>
@@ -74,6 +88,11 @@
     <iframe src="https://player.vimeo.com/video/1229493768" title="Porsche Cayman GT4"
       frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
       allowfullscreen></iframe>
+  </div>
+
+  <div class="film-cta">
+    <p>Une vidéo comme celle-ci pour votre voiture ou votre garage ?</p>
+    <a href="devis.html" class="btn btn-primary">Demander un devis</a>
   </div>
 </main>
 
