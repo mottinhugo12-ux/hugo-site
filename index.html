@@ -159,7 +159,7 @@
   .sec-head p{color:var(--muted);max-width:360px;font-size:15px}
 
   /* ---------- WORKS GRID ---------- */
-  .films{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  .films{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;scroll-behavior:smooth;
     margin:0 0 64px;padding-bottom:4px;-ms-overflow-style:none;scrollbar-width:none}
   .films::-webkit-scrollbar{display:none}
   .films .work{flex:0 0 min(320px,68vw);scroll-snap-align:start}
@@ -176,16 +176,23 @@
     background:rgba(0,0,0,.35);backdrop-filter:blur(4px);
     display:flex;align-items:center;justify-content:center;
     color:#fff;font-weight:800;font-size:11px;letter-spacing:.02em}
+  .work-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;
+    width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.4);
+    display:flex;align-items:center;justify-content:center;transition:.3s}
+  .work-play::after{content:"";border-left:13px solid #fff;border-top:8px solid transparent;
+    border-bottom:8px solid transparent;margin-left:3px}
+  .work:hover .work-play{background:rgba(255,255,255,.42);transform:translate(-50%,-50%) scale(1.08)}
   .car-meta{position:absolute;left:18px;bottom:18px;z-index:3}
   .car-meta .brand{font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.02em;color:#fff}
   .car-meta .model{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.75);margin-top:2px}
   .subhead{margin:0 0 26px}
   .subhead h3{font-weight:800;font-size:clamp(20px,2.6vw,30px);text-transform:uppercase;letter-spacing:-.01em}
   .subhead .sec-tag{display:block;margin-bottom:8px}
-  .work .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .9s cubic-bezier(.2,.8,.2,1);
+  .work .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+    transform:scale(1.05);transition:transform .9s cubic-bezier(.2,.8,.2,1);
     -webkit-user-drag:none;user-select:none;pointer-events:none}
   .films{touch-action:pan-x pan-y}
-  .work:hover .ph{transform:scale(1.07)}
+  .work:hover .ph{transform:scale(1.1)}
   .work .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(0,0,0,.78))}
   .work .meta{position:absolute;left:18px;right:18px;bottom:18px;z-index:3}
   .work .meta .t{font-weight:800;font-size:19px;text-transform:uppercase;color:#fff}
@@ -236,7 +243,7 @@
 
   /* ---------- SERVICES ---------- */
   .services{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:40px;
+  .sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:14px;
     border-radius:14px;overflow:hidden;border:1px solid var(--line)}
   .sector{position:relative;overflow:hidden;background:var(--card);aspect-ratio:4/3}
   .sector .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -247,7 +254,7 @@
   .sector-desc{font-size:13px;line-height:1.45;color:rgba(255,255,255,.8)}
   .svc-grid{display:flex;flex-direction:column;gap:14px}
   .svc{display:flex;align-items:center;gap:clamp(20px,4vw,44px);
-    border:1px solid var(--line);border-radius:14px;padding:clamp(20px,3vw,32px);background:var(--card);
+    border:1px solid var(--line);border-radius:14px;padding:clamp(14px,2vw,22px) clamp(20px,3vw,32px);background:var(--card);
     transition:.4s;position:relative;overflow:hidden}
   .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
     background:linear-gradient(90deg,transparent,rgba(0,0,0,.25),transparent);
@@ -265,6 +272,7 @@
   .svc-list{list-style:none;display:flex;flex-direction:column;gap:10px}
   .svc-list li{position:relative;padding-left:20px;font-size:14px;line-height:1.4;color:var(--ink)}
   .svc-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--ink);font-weight:700;font-size:12px}
+  .svc-btn{flex:0 0 auto;white-space:nowrap}
 
   /* ---------- CONTACT ---------- */
   .contact{text-align:center}
@@ -416,41 +424,49 @@
     <a class="work work--poster reveal" href="film1.html">
       <div class="ph v2"></div><img class="ph" src="film1.jpg" alt="Porsche GT3 RS" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Porsche</div><div class="model">GT3 RS</div></div>
+      <div class="work-play"></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film2.html">
       <div class="ph v4"></div><img class="ph" src="film2.jpg" alt="Ferrari Portofino" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Ferrari</div><div class="model">Portofino</div></div>
+      <div class="work-play"></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film3.html">
       <div class="ph v6"></div><img class="ph" src="film3.jpg" alt="Porsche Carrera 3.0L" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Porsche</div><div class="model">Carrera 3.0L</div></div>
-      <div class="work-mark">HM</div>
-    </a>
-    <a class="work work--poster reveal" href="film4.html">
-      <div class="ph v1"></div><img class="ph" src="film4.jpg" alt="BMW 325i" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
-      <div class="car-meta"><div class="brand">BMW</div><div class="model">325i</div></div>
-      <div class="work-mark">HM</div>
-    </a>
-    <a class="work work--poster reveal" href="film5.html">
-      <div class="ph v3"></div><img class="ph" src="film5.jpg" alt="Mazda Miata" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
-      <div class="car-meta"><div class="brand">Mazda</div><div class="model">Miata</div></div>
+      <div class="work-play"></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film6.html">
       <div class="ph v5"></div><img class="ph" src="film6.jpg" alt="Lancia Delta & Beta" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Lancia</div><div class="model">Delta &amp; Beta</div></div>
+      <div class="work-play"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film5.html">
+      <div class="ph v3"></div><img class="ph" src="film5.jpg" alt="Mazda Miata" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="car-meta"><div class="brand">Mazda</div><div class="model">Miata</div></div>
+      <div class="work-play"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film4.html">
+      <div class="ph v1"></div><img class="ph" src="film4.jpg" alt="BMW 325i" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="car-meta"><div class="brand">BMW</div><div class="model">325i</div></div>
+      <div class="work-play"></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film7.html">
       <div class="ph v2"></div><img class="ph" src="film7.jpg" alt="Porsche Cayman GT4" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Porsche</div><div class="model">Cayman GT4</div></div>
+      <div class="work-play"></div>
       <div class="work-mark">HM</div>
     </a>
     <a class="work work--poster reveal" href="film8.html">
       <div class="ph v4"></div><img class="ph" src="film8.jpg" alt="Mercedes-Benz SL500" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Mercedes-Benz</div><div class="model">SL500</div></div>
+      <div class="work-play"></div>
       <div class="work-mark">HM</div>
     </a>
   </div>
@@ -503,7 +519,7 @@
 <!-- ================= SERVICES ================= -->
 <section class="services" id="services">
   <div class="subhead reveal">
-    <h3>Services</h3>
+    <h3>Prestations proposées</h3>
   </div>
   <!-- ===== SECTEURS (photos) =====
        Dépose une photo pour chaque secteur : secteur-presentation-vehicule.jpg, secteur-evenement-garage.jpg, secteur-focus-atelier.jpg.
@@ -531,10 +547,6 @@
       </div>
     </div>
   </div>
-  <div class="subhead reveal" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
-    <h3>Prestations proposées</h3>
-    <a href="devis.html" class="btn btn-ghost">Demander un devis</a>
-  </div>
   <div class="svc-grid">
     <div class="svc reveal">
       <div class="num">01</div>
@@ -550,6 +562,7 @@
           <li>Livrée prête à publier, réseaux sociaux ou site web</li>
         </ul>
       </div>
+      <a href="devis.html" class="btn btn-primary svc-btn">Demander un devis</a>
     </div>
     <div class="svc reveal">
       <div class="num">02</div>
@@ -565,6 +578,7 @@
           <li>Livrées prêtes à publier, réseaux sociaux ou site web</li>
         </ul>
       </div>
+      <a href="devis.html" class="btn btn-primary svc-btn">Demander un devis</a>
     </div>
     <div class="svc reveal">
       <div class="num">03</div>
@@ -580,6 +594,7 @@
           <li>Un suivi assuré sur la durée</li>
         </ul>
       </div>
+      <a href="devis.html" class="btn btn-primary svc-btn">Demander un devis</a>
     </div>
   </div>
 </section>
