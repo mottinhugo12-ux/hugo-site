@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demander un devis | Hugo Mottin</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="canonical" href="https://hugomottin.com/devis.html">
+<meta name="description" content="Demandez un devis pour une vidéo automobile avec Hugo Mottin, vidéaste automobile à Paris, en Rhône-Alpes et sur la Côte d'Azur.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --ink:#0d0d0d; --muted:#777771;
+    --line:rgba(0,0,0,.12); --card:#ededeb;
+    --sans:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;
+       line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px clamp(20px,5vw,64px);color:var(--ink);background:#fff;border-bottom:1px solid var(--line)}
+  .brand{font-weight:800;letter-spacing:.14em;font-size:15px;color:inherit}
+  nav{display:flex;gap:34px;align-items:center}
+  nav a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-weight:500}
+  .nav-cta{border:1px solid var(--line);padding:9px 18px;border-radius:40px}
+
+  main{padding:150px clamp(20px,5vw,64px) 100px;max-width:720px;margin:0 auto}
+  .back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+  .back-link:hover{color:var(--ink)}
+  .tag{font-size:12px;letter-spacing:.20em;text-transform:uppercase;color:var(--ink);font-weight:600;display:block;margin-bottom:14px}
+  h1{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(28px,4.5vw,48px);margin-bottom:18px}
+  p.desc{color:var(--muted);max-width:560px;margin-bottom:44px;font-size:16px}
+
+  form{display:flex;flex-direction:column;gap:20px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:500}
+  input,select,textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:10px;
+    background:var(--card);color:var(--ink);font-family:var(--sans);font-size:15px;transition:.25s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink);background:#fff}
+  textarea{resize:vertical;min-height:120px}
+  select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23777771' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 16px center}
+  .btn-submit{margin-top:10px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 28px;border-radius:40px;background:var(--ink);color:#fff;border:0;cursor:pointer;
+    font-family:var(--sans);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;transition:.3s}
+  .btn-submit:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.18)}
+  .btn-submit:disabled{opacity:.6;cursor:default;transform:none}
+  .form-note{font-size:12px;color:var(--muted);margin-top:-6px}
+  .form-status{display:none;padding:16px 18px;border-radius:10px;font-size:14px;margin-bottom:20px}
+  .form-status.ok{display:block;background:#eef8ef;color:#1e6b2e;border:1px solid #c8e6cc}
+  .form-status.err{display:block;background:#fdeeee;color:#8a1f1f;border:1px solid #f1c6c6}
+
+  footer{padding:40px clamp(20px,5vw,64px);border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+    font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  footer .brand{font-size:13px;color:var(--ink)}
+  @media(max-width:560px){ nav{display:none} .row{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html#top" class="brand">HUGO <span>MOTTIN</span></a>
+  <nav>
+    <a href="index.html#works">Réalisations</a>
+    <a href="index.html#about">À propos</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://www.instagram.com/hugomottin/" target="_blank" rel="noopener" class="nav-cta">Instagram ↗</a>
+  </nav>
+</header>
+
+<main>
+  <a href="index.html#services" class="back-link">&larr; Retour au site</a>
+  <span class="tag">Devis</span>
+  <h1>Demander un devis</h1>
+  <p class="desc">Quelques informations sur votre projet pour vous répondre rapidement avec une proposition adaptée.</p>
+
+  <div id="formStatus" class="form-status"></div>
+
+  <!-- ===== FORMULAIRE : envoi via Web3Forms (aucun serveur nécessaire) =====
+       1. Va sur https://web3forms.com, entre ton email, tu reçois une clé d'accès instantanément (pas de mot de passe à créer).
+       2. Remplace YOUR_ACCESS_KEY_HERE ci-dessous par cette clé.
+       Tant que la clé n'est pas remplacée, le formulaire ne pourra pas envoyer les emails. -->
+  <form id="devisForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="fb599ddf-c445-4498-bf8e-0d3f4865f6f1">
+    <input type="hidden" name="subject" value="Nouvelle demande de devis — hugomottin.com">
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div class="row">
+      <div>
+        <label for="name">Nom & prénom</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="phone">Téléphone (optionnel)</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div>
+        <label for="project">Type de projet</label>
+        <select id="project" name="Type de projet">
+          <option>Vidéo véhicule</option>
+          <option>Pack multi véhicules</option>
+          <option>Accompagnement mensuel</option>
+          <option>Autre / je ne sais pas encore</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="budget">Budget approximatif</label>
+        <select id="budget" name="Budget approximatif">
+          <option>Moins de 500 €</option>
+          <option>500 € – 1000 €</option>
+          <option>1000 € – 2000 €</option>
+          <option>Plus de 2000 €</option>
+          <option>Pas encore défini</option>
+        </select>
+      </div>
+      <div>
+        <label for="delai">Délai souhaité</label>
+        <select id="delai" name="Délai souhaité">
+          <option>Dès que possible</option>
+          <option>Dans le mois</option>
+          <option>Dans les 3 mois</option>
+          <option>Pas de contrainte</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label for="message">Détails de votre projet</label>
+      <textarea id="message" name="message" placeholder="Type de véhicule(s), objectif de la vidéo, lieu du tournage…"></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit" id="submitBtn">Envoyer ma demande</button>
+    <p class="form-note">Vous recevrez une réponse par email sous 24 à 48h.</p>
+  </form>
+</main>
+
+<footer>
+  <span class="brand">HUGO <span>MOTTIN</span></span>
+  <span>© <span id="yr"></span> · Vidéos automobiles cinématiques</span>
+  <span>Paris · Rhône-Alpes · Côte d'Azur</span>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const form = document.getElementById('devisForm');
+  const status = document.getElementById('formStatus');
+  const btn = document.getElementById('submitBtn');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+    status.className = 'form-status';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json();
+      if (data.success) {
+        status.textContent = "Merci, votre demande a bien été envoyée ! Réponse sous 24 à 48h.";
+        status.className = 'form-status ok';
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Erreur inconnue');
+      }
+    } catch (err) {
+      status.textContent = "Une erreur est survenue. Vous pouvez aussi écrire directement à mottin.hugo12@gmail.com.";
+      status.className = 'form-status err';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer ma demande';
+    }
+  });
+</script>
+</body>
+</html>

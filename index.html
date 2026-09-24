@@ -236,32 +236,35 @@
 
   /* ---------- SERVICES ---------- */
   .services{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:18px;
+  .sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:40px;
     border-radius:14px;overflow:hidden;border:1px solid var(--line)}
-  .sector{position:relative;overflow:hidden;background:var(--card);aspect-ratio:16/7}
+  .sector{position:relative;overflow:hidden;background:var(--card);aspect-ratio:4/3}
   .sector .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .sector .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.78))}
-  .sector-label{position:absolute;left:18px;bottom:16px;z-index:2;font-weight:800;font-size:16px;
-    text-transform:uppercase;letter-spacing:-.01em;color:#fff}
-  .sectors-desc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
-  .sectors-desc p{color:var(--muted);font-size:14px;line-height:1.5;text-align:center}
-  .formule-label{text-align:center;font-weight:800;font-size:clamp(20px,2.6vw,30px);
-    text-transform:uppercase;letter-spacing:-.01em;margin-bottom:26px}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .svc{border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:26px 22px;background:var(--ink);
+  .sector .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.85))}
+  .sector-text{position:absolute;left:18px;right:18px;bottom:16px;z-index:2}
+  .sector-label{display:block;font-weight:800;font-size:16px;
+    text-transform:uppercase;letter-spacing:-.01em;color:#fff;margin-bottom:6px}
+  .sector-desc{font-size:13px;line-height:1.45;color:rgba(255,255,255,.8)}
+  .svc-grid{display:flex;flex-direction:column;gap:14px}
+  .svc{display:flex;align-items:center;gap:clamp(20px,4vw,44px);
+    border:1px solid var(--line);border-radius:14px;padding:clamp(20px,3vw,32px);background:var(--card);
     transition:.4s;position:relative;overflow:hidden}
   .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+    background:linear-gradient(90deg,transparent,rgba(0,0,0,.25),transparent);
     opacity:0;transition:opacity .4s}
-  .svc:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.35);box-shadow:0 20px 44px rgba(0,0,0,.35)}
+  .svc:hover{transform:translateY(-4px);border-color:rgba(0,0,0,.25);box-shadow:0 14px 32px rgba(0,0,0,.08)}
   .svc:hover::before{opacity:1}
-  .svc .num{position:absolute;bottom:-30px;right:2px;z-index:0;
-    font-weight:900;font-size:90px;line-height:1;color:#fff;opacity:.08;letter-spacing:-.03em}
-  .svc .num,.svc h3,.svc p{position:relative;z-index:1}
-  .svc h3{font-weight:800;font-size:23px;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 12px;color:#fff}
-  .svc p{color:rgba(255,255,255,.65);font-size:15px;margin-bottom:14px}
-  .svc p:last-of-type{margin-bottom:18px}
-  .svc p b{color:#fff}
+  .svc .num{position:absolute;bottom:-30px;right:10px;z-index:0;
+    font-weight:900;font-size:100px;line-height:1;color:var(--ink);opacity:.05;letter-spacing:-.03em}
+  .svc .num,.svc-left,.svc-right{position:relative;z-index:1}
+  .svc-left{flex:0 0 auto;width:clamp(170px,22vw,240px)}
+  .svc-right{flex:1;min-width:0}
+  .svc-icon{color:var(--ink);opacity:.8}
+  .svc h3{font-weight:800;font-size:19px;text-transform:uppercase;letter-spacing:-.01em;margin:12px 0 8px;color:var(--ink)}
+  .svc-tag{display:block;font-size:12px;font-style:italic;color:var(--ink)}
+  .svc-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .svc-list li{position:relative;padding-left:20px;font-size:14px;line-height:1.4;color:var(--ink)}
+  .svc-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--ink);font-weight:700;font-size:12px}
 
   /* ---------- CONTACT ---------- */
   .contact{text-align:center}
@@ -293,9 +296,11 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:900px){
-    .svc-grid,.reels-embeds{grid-template-columns:repeat(2,1fr)}
-    .sectors-grid,.sectors-desc{grid-template-columns:1fr}
-    .sector{aspect-ratio:16/9}
+    .reels-embeds{grid-template-columns:repeat(2,1fr)}
+    .sectors-grid{grid-template-columns:1fr}
+    .sector{aspect-ratio:16/10}
+    .svc{flex-direction:column;align-items:flex-start;text-align:left}
+    .svc-left{width:100%}
     .intro-overlay{background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.55))}
     .intro-text{max-width:100%;text-align:center}
     .intro-text p{max-width:100%;margin-left:auto;margin-right:auto}
@@ -318,7 +323,7 @@
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   }
   @media(max-width:560px){
-    .svc-grid,.reels-embeds{grid-template-columns:1fr}
+    .reels-embeds{grid-template-columns:1fr}
   }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -349,7 +354,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-inner reveal">
     <h1>Hugo Mottin<br>Vidéaste automobile</h1>
-    <p>Images cinématiques et regard nostalgique pour offrir aux garages, ateliers et collectionneurs des vidéos à la hauteur de leurs voitures.</p>
+    <p>Images cinématiques au service des garages, ateliers et collectionneurs de voitures de caractère.</p>
   </div>
   <div class="scroll-cue"><span>Scroll</span><i></i></div>
 </section>
@@ -461,7 +466,7 @@
     <div class="intro-text">
       <span class="eyebrow">Vidéaste automobile · Paris · Rhône-Alpes · Côte d'Azur</span>
       <h2>Vidéos<br><em>automobiles</em><br>cinématiques</h2>
-      <p>Je transforme vos voitures d'exception en contenus vidéo qui captent l'attention, racontent une histoire et font vivre vos réseaux sociaux.</p>
+      <p>Des voitures d'exception transformées en contenus vidéo qui captent l'attention, racontent une histoire et font vivre vos réseaux sociaux.</p>
       <div class="hero-actions">
         <a href="#services" class="btn btn-primary">Voir mes services</a>
         <a href="#contact" class="btn btn-ghost">Travaillons ensemble</a>
@@ -481,9 +486,9 @@
       <h2>Hugo Mottin,<br>vidéaste<br>automobile</h2>
       <!-- ÉCRIS TON TEXTE ICI : remplace le contenu des <p> ci-dessous par ta propre histoire
            (ton parcours, ce qui t'a amené à la vidéo auto, ta façon de filmer…). -->
-      <p>Je réalise des vidéos cinématiques de voitures d'exception, classiques comme récentes, pensées pour faire connaître votre activité et attirer de nouveaux clients.</p>
-      <p>Mon approche est simple. Je filme ce qui rend chaque voiture unique, la lumière sur ses lignes, le son de son moteur, le soin apporté à chaque détail. Ce sont ces images qui retiennent l'attention sur les réseaux et qui montrent à vos futurs clients la qualité de votre travail avant même qu'ils vous contactent.</p>
-      <p>Je prends en charge l'ensemble du projet. Nous définissons ensemble ce que vous voulez mettre en avant, je viens tourner sur place, puis je m'occupe du montage et de l'étalonnage. Vous recevez une vidéo finalisée, prête à être publiée sur vos réseaux comme sur votre site.</p>
+      <p>Des vidéos cinématiques de voitures d'exception, classiques comme récentes, pensées pour promouvoir votre activité et attirer de nouveaux clients.</p>
+      <p>L'approche est simple : filmer ce qui rend chaque voiture unique, la lumière sur ses lignes, le son du moteur, le soin apporté à chaque détail. Des images qui captent l'attention sur les réseaux et montrent à vos futurs clients la qualité de votre travail avant même qu'ils vous contactent.</p>
+      <p>L'ensemble du projet est pris en charge de bout en bout. Nous définissons ensemble ce que vous voulez mettre en avant, puis vient le tournage sur place, suivi du montage et de l'étalonnage. Vous recevez une vidéo finalisée, prête à être publiée sur vos réseaux comme sur votre site.</p>
     </div>
     <!-- TA PHOTO : place ton fichier "moi.jpg" dans le même dossier que index.html.
          Tant qu'il n'existe pas, un fond gris s'affiche. Format conseillé : portrait vertical (4:5). -->
@@ -506,40 +511,75 @@
   <div class="sectors-grid reveal">
     <div class="sector">
       <div class="ph v2"></div><img class="ph" src="secteur-presentation-vehicule.jpg" alt="Présentation véhicule" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
-      <span class="sector-label">Présentation véhicule</span>
+      <div class="sector-text">
+        <span class="sector-label">Présentation véhicule</span>
+        <p class="sector-desc">Mise en avant de véhicules neufs ou d'occasion pour accompagner une vente.</p>
+      </div>
     </div>
     <div class="sector">
       <div class="ph v4"></div><img class="ph" src="secteur-evenement-garage.jpg" alt="Événement garage" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
-      <span class="sector-label">Événement garage</span>
+      <div class="sector-text">
+        <span class="sector-label">Événement garage</span>
+        <p class="sector-desc">Couverture de vos événements d'entreprise : inauguration, événement à thème…</p>
+      </div>
     </div>
     <div class="sector">
       <div class="ph v6"></div><img class="ph" src="secteur-focus-atelier.jpg" alt="Focus atelier" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
-      <span class="sector-label">Focus atelier</span>
+      <div class="sector-text">
+        <span class="sector-label">Focus atelier</span>
+        <p class="sector-desc">Vidéos consacrées à votre savoir-faire : atelier, techniciens, équipe commerciale.</p>
+      </div>
     </div>
   </div>
-  <div class="sectors-desc reveal">
-    <p>Mise en avant de véhicules neufs ou d'occasion pour accompagner une vente.</p>
-    <p>Couverture de vos événements d'entreprise : inauguration, événement à thème…</p>
-    <p>Vidéos consacrées à votre savoir-faire — atelier, techniciens, équipe commerciale.</p>
+  <div class="subhead reveal" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+    <h3>Prestations proposées</h3>
+    <a href="devis.html" class="btn btn-ghost">Demander un devis</a>
   </div>
-  <h3 class="formule-label reveal">Formule de prestation</h3>
   <div class="svc-grid">
     <div class="svc reveal">
       <div class="num">01</div>
-      <h3>Vidéo<br>véhicule</h3>
-      <p>Le tournage d'une seule voiture, pensée pour être mise en valeur.</p>
-      <p><b>Livrable :</b> 1 vidéo de 30 à 45 secondes, prête à publier sur vos réseaux sociaux ou votre site web.</p>
+      <div class="svc-left">
+        <div class="svc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M15 9.5 21 6v12l-6-3.5"/></svg></div>
+        <h3>Vidéo<br>véhicule</h3>
+        <span class="svc-tag">Idéal pour une vente ou une mise en avant ponctuelle</span>
+      </div>
+      <div class="svc-right">
+        <ul class="svc-list">
+          <li>Tournage d'une seule voiture, sur site</li>
+          <li>1 vidéo de 30 à 45 secondes</li>
+          <li>Livrée prête à publier, réseaux sociaux ou site web</li>
+        </ul>
+      </div>
     </div>
     <div class="svc reveal">
       <div class="num">02</div>
-      <h3>Pack<br>multi véhicules</h3>
-      <p>Le tournage de plusieurs voitures en une seule session, pour présenter tout un stock ou une collection.</p>
-      <p><b>Livrable :</b> 1 vidéo de 30 à 45 secondes par véhicule, prête pour vos réseaux sociaux ou votre site web.</p>
+      <div class="svc-left">
+        <div class="svc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg></div>
+        <h3>Pack<br>multi véhicules</h3>
+        <span class="svc-tag">Idéal pour présenter un stock ou une collection</span>
+      </div>
+      <div class="svc-right">
+        <ul class="svc-list">
+          <li>Tournage de plusieurs voitures en une seule session</li>
+          <li>1 vidéo de 30 à 45 secondes par véhicule</li>
+          <li>Livrées prêtes à publier, réseaux sociaux ou site web</li>
+        </ul>
+      </div>
     </div>
     <div class="svc reveal">
       <div class="num">03</div>
-      <h3>Accompagnement<br>mensuel</h3>
-      <p>Une collaboration sur la durée, pensée pour les garages et ateliers qui veulent une présence régulière sur les réseaux sociaux. Nous définissons ensemble vos besoins et vos objectifs, puis j'assure un suivi mensuel : tournages et création de contenu.</p>
+      <div class="svc-left">
+        <div class="svc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="M9 15h6"/></svg></div>
+        <h3>Accompagnement<br>mensuel</h3>
+        <span class="svc-tag">Idéal pour une présence régulière sur les réseaux</span>
+      </div>
+      <div class="svc-right">
+        <ul class="svc-list">
+          <li>Définition des besoins et objectifs, ensemble</li>
+          <li>Tournages et création de contenu chaque mois</li>
+          <li>Un suivi assuré sur la durée</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -548,7 +588,7 @@
 <section class="contact" id="contact">
   <span class="sec-tag reveal">Contact</span>
   <h2 class="reveal"><a href="mailto:mottin.hugo12@gmail.com">Donnons vie<br>à vos voitures</a></h2>
-  <p class="lead reveal">Vous avez de belles voitures à mettre en valeur, ou vos réseaux sociaux à développer ? Basé en Rhône-Alpes, j'interviens aussi à Paris et sur la Côte d'Azur. Parlons-en et créons ensemble du contenu qui vous démarque.</p>
+  <p class="lead reveal">Vous cherchez à mettre en avant votre savoir-faire et vos belles mécaniques, ou à développer vos réseaux sociaux ? Une présence en Rhône-Alpes, à Paris et sur la Côte d'Azur, pour créer ensemble du contenu qui vous démarque.</p>
   <p class="contact-coords reveal">
     <a href="tel:+33603721383">06 03 72 13 83</a>
     <span class="sep">·</span>
@@ -557,7 +597,7 @@
   <div class="socials reveal">
     <a href="mailto:mottin.hugo12@gmail.com">Email</a>
     <a href="https://www.instagram.com/hugomottin/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.tiktok.com/@hugomottin" target="_blank" rel="noopener">TikTok</a>
   </div>
 </section>
 
