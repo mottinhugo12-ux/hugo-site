@@ -205,6 +205,17 @@
   .v5{background:linear-gradient(135deg,#9d9d9b,#2a2a2a 78%)}
   .v6{background:linear-gradient(135deg,#828280,#1f1f1f 78%),radial-gradient(circle at 70% 65%,rgba(255,255,255,.18),transparent 50%)}
   .works-cta{margin-top:46px;text-align:center}
+  .longs-lead{color:var(--muted);max-width:640px;margin:-8px 0 30px;font-size:16px}
+  .longs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .yt-play{position:relative;display:block;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
+    background:#000;border:1px solid var(--line)}
+  .yt-play img,.yt-play iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+  .yt-play img{transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+  .yt-play:hover img{transform:scale(1.04)}
+  .yt-play:hover .work-play{background:rgba(255,255,255,.42);transform:translate(-50%,-50%) scale(1.08)}
+  .yt-title{font-weight:700;font-size:16px;line-height:1.35;margin:14px 0 2px}
+  .yt-meta{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  @media(max-width:700px){.longs-grid{grid-template-columns:1fr}}
   /* embeds Instagram */
   .reels-embeds{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
   .reel-embed{width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;
@@ -421,6 +432,24 @@
     </div>
   </div>
   <div class="films" id="filmsSlider">
+    <a class="work work--poster reveal" href="film11.html">
+      <div class="ph v3"></div><img class="ph" src="film11.jpg" alt="Porsche GT3 RS CarJager" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="car-meta"><div class="brand">Porsche</div><div class="model">GT3 RS</div></div>
+      <div class="work-play"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film9.html">
+      <div class="ph v1"></div><img class="ph" src="film9.jpg" alt="Audi R8 V10" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="car-meta"><div class="brand">Audi</div><div class="model">R8 V10</div></div>
+      <div class="work-play"></div>
+      <div class="work-mark">HM</div>
+    </a>
+    <a class="work work--poster reveal" href="film10.html">
+      <div class="ph v4"></div><img class="ph" src="film10.jpg" alt="Ferrari 812" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="car-meta"><div class="brand">Ferrari</div><div class="model">812</div></div>
+      <div class="work-play"></div>
+      <div class="work-mark">HM</div>
+    </a>
     <a class="work work--poster reveal" href="film1.html">
       <div class="ph v2"></div><img class="ph" src="film1.jpg" alt="Porsche GT3 RS" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Porsche</div><div class="model">GT3 RS</div></div>
@@ -490,6 +519,33 @@
     </div>
   </div>
 
+</section>
+
+<!-- ================= FORMATS LONGS (YouTube, lecture au clic) ================= -->
+<section class="works-section" id="formats-longs">
+  <div class="subhead reveal">
+    <span class="sec-tag">Cadrage</span>
+    <h3>Formats longs</h3>
+  </div>
+  <p class="longs-lead reveal">Au-delà des vidéos courtes, le cadrage de reportages de longue durée : deux épisodes tournés au salon Époqu'Auto 2026 pour la chaîne YouTube YOUNGTIMERS LA CHAÎNE.</p>
+  <div class="longs-grid">
+    <div class="reveal">
+      <a class="yt-play" href="https://www.youtube.com/watch?v=r-JKWvFhZp0&amp;t=1500s" data-yt="r-JKWvFhZp0" data-start="1500" target="_blank" rel="noopener" aria-label="Lire la vidéo : Époqu'Auto 2026, les stars du salon en avant-première">
+        <img src="yt-epoquauto-1.jpg" alt="Époqu'Auto 2026 : les stars du salon en avant-première, vidéo YOUNGTIMERS LA CHAÎNE" loading="lazy" decoding="async">
+        <div class="work-play"></div>
+      </a>
+      <p class="yt-title">Époqu'Auto 2026 : les stars du salon en avant-première</p>
+      <p class="yt-meta">Cadrage · YOUNGTIMERS LA CHAÎNE</p>
+    </div>
+    <div class="reveal">
+      <a class="yt-play" href="https://www.youtube.com/watch?v=J_yfOVr-z8E&amp;t=44s" data-yt="J_yfOVr-z8E" data-start="44" target="_blank" rel="noopener" aria-label="Lire la vidéo : Époqu'Auto 2026, des prix délirants mais aussi de vraies bonnes affaires">
+        <img src="yt-epoquauto-2.jpg" alt="Époqu'Auto 2026 : des prix délirants et de vraies bonnes affaires, vidéo YOUNGTIMERS LA CHAÎNE" loading="lazy" decoding="async">
+        <div class="work-play"></div>
+      </a>
+      <p class="yt-title">Époqu'Auto 2026 : des prix délirants… mais aussi de vraies bonnes affaires</p>
+      <p class="yt-meta">Cadrage · YOUNGTIMERS LA CHAÎNE</p>
+    </div>
+  </div>
 </section>
 
 <!-- ================= ABOUT ================= -->
@@ -695,6 +751,16 @@
     });
   }, { rootMargin: '900px 0px' });
   document.querySelectorAll('.lazy-video').forEach(v => videoIo.observe(v));
+  document.querySelectorAll('.yt-play').forEach(a => a.addEventListener('click', (e) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&rel=0&start=' + a.dataset.start;
+    f.title = a.getAttribute('aria-label') || 'Vidéo YouTube';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    a.replaceChildren(f);
+  }));
 </script>
 <!-- Script Instagram : transforme les liens reels en vidéos lisibles directement sur le site -->
 <script async src="https://www.instagram.com/embed.js"></script>
