@@ -83,6 +83,43 @@
     nav{display:none}
     .talk-links{flex-direction:column;gap:22px;align-items:center}
   }
+
+  /* ---------- REFONTE À PROPOS ---------- */
+  body{padding-top:70px}
+  .ab-hero{padding:clamp(50px,6vw,90px) clamp(20px,5vw,64px)}
+  .ab-hero-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,80px);align-items:center}
+  .ab-hero .back-link{color:var(--muted)}
+  .ab-hero .back-link:hover{color:var(--ink)}
+  .ab-hero .tag{color:var(--muted)}
+  .ab-hero h1{margin-bottom:28px}
+  .ab-lead{font-size:clamp(19px,1.8vw,23px);line-height:1.5;font-weight:500;margin-bottom:20px}
+  .ab-hero-txt p{color:#3a3a3a;font-size:17px;margin-bottom:16px}
+  .ab-hero-img{aspect-ratio:4/5;overflow:hidden;background:#eee}
+  .ab-hero-img img{width:100%;height:100%;object-fit:cover}
+  .ab-block{background:#f4f4f3;padding:clamp(60px,7vw,100px) clamp(20px,5vw,64px)}
+  .ab-row{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:#fff}
+  .ab-row+.ab-row{margin-top:clamp(24px,3vw,40px)}
+  .ab-row.rev .ab-img{order:2}
+  .ab-img{min-height:380px;overflow:hidden}
+  .ab-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+  .ab-row:hover .ab-img img{transform:scale(1.04)}
+  .ab-txt{padding:clamp(30px,4vw,60px);display:flex;flex-direction:column;justify-content:center}
+  .ab-num{font-size:12px;letter-spacing:.2em;color:var(--muted)}
+  .ab-txt h2{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(26px,3vw,40px);line-height:1;margin:12px 0 18px}
+  .ab-txt p{color:#3a3a3a;font-size:16px;margin-bottom:14px}
+  .ab-facts{background:#0d0d0d;color:#fff;padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px)}
+  .ab-facts-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .ab-facts b{display:block;font-weight:900;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.02em;line-height:1}
+  .ab-facts span{display:block;margin-top:10px;font-size:13px;color:rgba(255,255,255,.6)}
+  .ab-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:0}
+  .ab-gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+  .talk{padding-top:clamp(70px,8vw,110px)}
+  @media(max-width:860px){
+    .ab-hero-in,.ab-row{grid-template-columns:1fr}
+    .ab-row.rev .ab-img{order:0}
+    .ab-img{min-height:260px}
+    .ab-facts-in,.ab-gallery{grid-template-columns:repeat(2,1fr)}
+  }
 </style>
 </head>
 <body>
@@ -99,26 +136,63 @@
   </nav>
 </header>
 
-<section class="about-hero">
-  <div class="about-hero-in">
-    <a href="index.html#top" class="back-link">&larr; Retour à l'accueil</a>
-    <span class="tag">Vidéaste automobile</span>
-    <h1>À propos</h1>
-    <div class="about-copy">
-      <!-- ÉCRIS TON TEXTE ICI si tu veux personnaliser encore plus : une anecdote sur tes débuts,
-           un projet marquant... remplace simplement le contenu des <p>. -->
-      <div>
-        <p>Je suis vidéaste automobile, et je vis de la vidéo depuis maintenant 3 ans. Je me suis spécialisé dans les voitures d'exception, classiques comme récentes, en aidant les garages, ateliers et concessions à donner à leur travail une image à la hauteur de ce qu'il mérite.</p>
-        <p>Avant la vidéo, j'étais en études. Ma passion pour les voitures s'est construite seul, au fil du temps, à force de regarder, de filmer et de m'intéresser à ce qui rend chaque modèle unique. Cette curiosité s'est transformée en véritable métier : ne pas seulement documenter une voiture, mais raconter ce qui la rend exceptionnelle.</p>
-        <p>Basé à Paris et en Rhône-Alpes, je me déplace aussi sur la Côte d'Azur pour capter chaque voiture dans son meilleur environnement.</p>
-      </div>
-      <div>
-        <p>Sur un plateau d'exposition, dans un atelier ou lors d'un événement, l'objectif reste le même : livrer des images qui marquent, immersives et soignées jusqu'au moindre détail.</p>
-        <p>Je privilégie les collaborations construites dans la durée plutôt que les tournages ponctuels. Travailler sur plusieurs projets avec les mêmes garages et ateliers me permet de vraiment comprendre leur identité, et de produire un contenu cohérent, qui leur ressemble.</p>
-        <p>Mon style est guidé par la précision et le souci du détail : capter l'essence d'une voiture d'une façon qui donne envie de s'arrêter dessus, que ce soit sur les réseaux ou sur un site.</p>
-      </div>
+<section class="ab-hero">
+  <div class="ab-hero-in">
+    <div class="ab-hero-txt">
+      <a href="index.html#top" class="back-link">&larr; Retour à l'accueil</a>
+      <span class="tag">Vidéaste automobile · Paris</span>
+      <h1>À propos</h1>
+      <p class="ab-lead">Je m'appelle Hugo Mottin. Je filme des voitures de caractère, classiques comme récentes, pour les garages, les concessions, les ateliers et les collectionneurs.</p>
+      <p>Je crée des vidéos courtes depuis 2023 et je me consacre aujourd'hui entièrement à l'automobile. Mon travail a déjà cumulé plusieurs centaines de milliers de vues, et une de mes vidéos a été reprise par le compte officiel de Mercedes-Benz.</p>
+    </div>
+    <div class="ab-hero-img"><img src="moi.jpg" alt="Hugo Mottin, vidéaste automobile, au volant d'un cabriolet"></div>
+  </div>
+</section>
+
+<section class="ab-block">
+  <div class="ab-row">
+    <div class="ab-img"><img src="giulia-video-automobile-04.jpg" alt="Détail de capot d'une Alfa Romeo Giulia" loading="lazy"></div>
+    <div class="ab-txt">
+      <span class="ab-num">01</span>
+      <h2>Ce que je fais</h2>
+      <p>Je m'occupe de tout le projet, du repérage à la livraison : tournage au sol et en drone, montage, étalonnage et son. Les vidéos sont pensées pour les réseaux sociaux comme pour votre site, en vertical ou en horizontal.</p>
+      <p>Présentation d'un véhicule en vente, événement au garage, savoir faire d'un atelier : chaque projet a son propre style.</p>
     </div>
   </div>
+  <div class="ab-row rev">
+    <div class="ab-img"><img src="secteur-focus-atelier.jpg" alt="Porsche 911 Targa dans un atelier de restauration" loading="lazy"></div>
+    <div class="ab-txt">
+      <span class="ab-num">02</span>
+      <h2>Ma façon de filmer</h2>
+      <p>Une voiture se raconte par ses détails : la lumière sur ses lignes, le son du moteur, le soin apporté par ceux qui l'entretiennent. Je cherche des images sobres et chaleureuses, sans mise en scène façon influenceur.</p>
+      <p>Le sujet, c'est la voiture et votre travail.</p>
+    </div>
+  </div>
+  <div class="ab-row">
+    <div class="ab-img"><img src="giulia-video-automobile-07.jpg" alt="Alfa Romeo Giulia sur une route d'automne" loading="lazy"></div>
+    <div class="ab-txt">
+      <span class="ab-num">03</span>
+      <h2>Travailler dans la durée</h2>
+      <p>Je préfère les collaborations suivies aux tournages ponctuels. Travailler plusieurs fois avec le même garage permet de comprendre son identité et de produire des contenus cohérents, mois après mois.</p>
+      <p>Basé à Paris, je travaille aussi régulièrement en Rhône-Alpes et dans le sud de la France.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ab-facts">
+  <div class="ab-facts-in">
+    <div><b>2023</b><span>premières vidéos courtes</span></div>
+    <div><b>100K+</b><span>vues sur plusieurs vidéos</span></div>
+    <div><b>1 sem.</b><span>de délai de livraison maximum</span></div>
+    <div><b>Sol + drone</b><span>vertical et horizontal</span></div>
+  </div>
+</section>
+
+<section class="ab-gallery">
+  <img src="film3.jpg" alt="Porsche Carrera 3.0 filmée par Hugo Mottin" loading="lazy">
+  <img src="film10.jpg" alt="Ferrari 812 filmée par Hugo Mottin" loading="lazy">
+  <img src="film12.jpg" alt="Alfa Romeo Giulia filmée par Hugo Mottin" loading="lazy">
+  <img src="film8.jpg" alt="Mercedes-Benz SL500 filmée par Hugo Mottin" loading="lazy">
 </section>
 
 <section class="talk">
