@@ -1,7 +1,24 @@
 {
   "redirects": [
-    { "source": "/videaste-automobile-paris.html", "destination": "/videaste-automobile.html", "permanent": true },
-    { "source": "/videaste-automobile-lyon.html", "destination": "/videaste-automobile.html", "permanent": true },
-    { "source": "/videaste-automobile-cote-d-azur.html", "destination": "/videaste-automobile.html", "permanent": true }
+    {
+      "source": "/videaste-automobile.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/videaste-automobile-paris.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/videaste-automobile-lyon.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/videaste-automobile-cote-d-azur.html",
+      "destination": "/",
+      "permanent": true
+    }
   ]
 }
