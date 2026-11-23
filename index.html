@@ -347,44 +347,33 @@
 
   /* ================= REFONTE ACCUEIL : plein écran, alternance blanc / noir ================= */
   #works{padding:0 0 clamp(40px,5vw,70px)}
-  #works .presents-band{height:min(72vh,720px);margin-bottom:clamp(28px,3vw,40px)}
-  #works .band-video{object-fit:cover}
-  #works .presents-band h2{font-size:clamp(40px,7vw,104px);line-height:.95}
+  #works .presents-band{height:clamp(150px,15vw,210px);margin-bottom:clamp(20px,2.4vw,32px)}
+  #works .band-video{object-fit:cover;object-position:center 62%}
+  #works .presents-band h2{font-size:clamp(30px,4.6vw,64px);line-height:1}
+  #works .presents-band .band-content{gap:10px}
   #works .subhead,#works .films{padding-left:clamp(20px,5vw,64px);padding-right:clamp(20px,5vw,64px)}
-  #works .films .work{flex:0 0 min(360px,72vw)}
   #works .intro{min-height:min(88vh,860px);margin-top:clamp(40px,5vw,70px)}
   #works .intro-text{margin-left:clamp(0px,3vw,40px)}
-  #formats-longs{padding:clamp(60px,7vw,100px) clamp(20px,5vw,64px)}
-  #formats-longs>*{position:relative;z-index:1}
-  #formats-longs::before{content:"";position:absolute;inset:clamp(20px,3vw,40px) clamp(12px,2.5vw,40px);background:#0d0d0d;z-index:0}
-  #formats-longs .subhead,#formats-longs .longs-lead,#formats-longs .longs-grid{max-width:1200px;margin-left:auto;margin-right:auto;padding:0 clamp(10px,3vw,48px)}
-  #formats-longs .subhead{padding-top:clamp(20px,3vw,40px)}
-  #formats-longs .longs-grid{padding-bottom:clamp(20px,3vw,40px)}
-  #formats-longs h3,#formats-longs .yt-title{color:#fff}
-  #formats-longs .sec-tag,#formats-longs .yt-meta{color:rgba(255,255,255,.55)}
-  #formats-longs .longs-lead{color:rgba(255,255,255,.7)}
-  #formats-longs .yt-play{border-radius:0}
   .about-section{background:var(--bg2);padding-top:clamp(70px,8vw,110px);padding-bottom:clamp(70px,8vw,110px)}
-  .services{background:#0d0d0d;color:#fff;border:0;padding-top:clamp(70px,8vw,110px);padding-bottom:clamp(70px,8vw,110px)}
-  .services .subhead h3{color:#fff;font-size:clamp(30px,4.6vw,60px);font-weight:900}
+  .services{background:#0d0d0d;color:#fff;border:0;padding-top:clamp(56px,6vw,84px);padding-bottom:clamp(56px,6vw,84px)}
+  .services .subhead h3{color:#fff}
   .offers-lead{color:rgba(255,255,255,.65);max-width:620px;margin:-6px 0 40px;font-size:16px}
-  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1080px}
   .offer{display:flex;flex-direction:column;background:#161616;border:1px solid rgba(255,255,255,.1);color:#fff;transition:transform .35s,border-color .35s,box-shadow .35s}
   .offer:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.45);box-shadow:0 30px 70px rgba(0,0,0,.5)}
-  .offer-img{aspect-ratio:16/10;overflow:hidden}
+  .offer-img{aspect-ratio:16/9;overflow:hidden}
   .offer-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
   .offer:hover .offer-img img{transform:scale(1.06)}
-  .offer-body{padding:30px 30px 32px;display:flex;flex-direction:column;flex:1}
+  .offer-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
   .offer-num{font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.45)}
-  .offer h3{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin:10px 0 6px;color:#fff}
-  .offer-tag{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:20px}
-  .offer ul{list-style:none;margin:0 0 28px;flex:1}
-  .offer li{padding:11px 0;border-top:1px solid rgba(255,255,255,.1);font-size:15px;color:rgba(255,255,255,.85)}
-  .offer-cta{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;padding:14px 24px;border-radius:40px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .offer h3{font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin:10px 0 6px;color:#fff}
+  .offer-tag{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:12px}
+  .offer ul{list-style:none;margin:0 0 18px;flex:1}
+  .offer li{padding:8px 0;border-top:1px solid rgba(255,255,255,.1);font-size:13.5px;color:rgba(255,255,255,.85)}
+  .offer-cta{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;padding:11px 20px;border-radius:40px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
   .offer-cta i{font-style:normal;transition:transform .3s}
   .offer:hover .offer-cta i{transform:translateX(5px)}
   .contact{padding-top:clamp(80px,9vw,130px);padding-bottom:clamp(80px,9vw,130px)}
-  #reels{background:var(--bg2);padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px)}
   @media(max-width:900px){.offers{grid-template-columns:1fr}}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -630,7 +619,7 @@
   <p class="offers-lead reveal">Présentation de véhicule, événement au garage ou focus atelier : chaque formule s'adapte à ce que vous voulez montrer. Tarif sur devis, réponse rapide.</p>
   <div class="offers">
     <a class="offer reveal" href="devis.html">
-      <div class="offer-img"><img src="secteur-presentation-vehicule.jpg" alt="Vidéo de présentation de véhicule pour garage" loading="lazy" decoding="async"></div>
+      <div class="offer-img"><img src="giulia-video-automobile-01.jpg" alt="Vidéo de présentation de véhicule pour garage" loading="lazy" decoding="async"></div>
       <div class="offer-body">
         <span class="offer-num">01</span>
         <h3>Vidéo véhicule</h3>
@@ -640,7 +629,7 @@
       </div>
     </a>
     <a class="offer reveal" href="devis.html">
-      <div class="offer-img"><img src="secteur-evenement-garage.jpg" alt="Vidéo de plusieurs véhicules dans un garage" loading="lazy" decoding="async"></div>
+      <div class="offer-img"><img src="hero.jpg" alt="Vidéo de plusieurs véhicules pour un garage" loading="lazy" decoding="async"></div>
       <div class="offer-body">
         <span class="offer-num">02</span>
         <h3>Pack multi véhicules</h3>
@@ -650,7 +639,7 @@
       </div>
     </a>
     <a class="offer reveal" href="devis.html">
-      <div class="offer-img"><img src="secteur-focus-atelier.jpg" alt="Accompagnement vidéo mensuel pour garage automobile" loading="lazy" decoding="async"></div>
+      <div class="offer-img"><img src="intro.jpg" alt="Accompagnement vidéo mensuel pour garage automobile" loading="lazy" decoding="async"></div>
       <div class="offer-body">
         <span class="offer-num">03</span>
         <h3>Accompagnement mensuel</h3>
@@ -688,13 +677,13 @@
        Pour changer un reel : remplace l'URL dans data-instgrm-permalink par le lien du reel souhaité. -->
   <div class="reels-embeds reveal">
     <div class="reel-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfukM0bxDBg/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
-        <a href="https://www.instagram.com/reel/DfukM0bxDBg/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfukM0bxDBg/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
+        <a href="https://www.instagram.com/p/DfukM0bxDBg/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
       </blockquote>
     </div>
     <div class="reel-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DgE3VLRSx4O/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
-        <a href="https://www.instagram.com/reel/DgE3VLRSx4O/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DgE3VLRSx4O/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
+        <a href="https://www.instagram.com/p/DgE3VLRSx4O/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
       </blockquote>
     </div>
     <div class="reel-embed">
