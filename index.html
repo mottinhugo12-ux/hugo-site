@@ -344,6 +344,48 @@
   @media(max-width:560px){
     .reels-embeds{grid-template-columns:1fr}
   }
+
+  /* ================= REFONTE ACCUEIL : plein écran, alternance blanc / noir ================= */
+  #works{padding:0 0 clamp(40px,5vw,70px)}
+  #works .presents-band{height:min(72vh,720px);margin-bottom:clamp(28px,3vw,40px)}
+  #works .band-video{object-fit:cover}
+  #works .presents-band h2{font-size:clamp(40px,7vw,104px);line-height:.95}
+  #works .subhead,#works .films{padding-left:clamp(20px,5vw,64px);padding-right:clamp(20px,5vw,64px)}
+  #works .films .work{flex:0 0 min(360px,72vw)}
+  #works .intro{min-height:min(88vh,860px);margin-top:clamp(40px,5vw,70px)}
+  #works .intro-text{margin-left:clamp(0px,3vw,40px)}
+  #formats-longs{padding:clamp(60px,7vw,100px) clamp(20px,5vw,64px)}
+  #formats-longs>*{position:relative;z-index:1}
+  #formats-longs::before{content:"";position:absolute;inset:clamp(20px,3vw,40px) clamp(12px,2.5vw,40px);background:#0d0d0d;z-index:0}
+  #formats-longs .subhead,#formats-longs .longs-lead,#formats-longs .longs-grid{max-width:1200px;margin-left:auto;margin-right:auto;padding:0 clamp(10px,3vw,48px)}
+  #formats-longs .subhead{padding-top:clamp(20px,3vw,40px)}
+  #formats-longs .longs-grid{padding-bottom:clamp(20px,3vw,40px)}
+  #formats-longs h3,#formats-longs .yt-title{color:#fff}
+  #formats-longs .sec-tag,#formats-longs .yt-meta{color:rgba(255,255,255,.55)}
+  #formats-longs .longs-lead{color:rgba(255,255,255,.7)}
+  #formats-longs .yt-play{border-radius:0}
+  .about-section{background:var(--bg2);padding-top:clamp(70px,8vw,110px);padding-bottom:clamp(70px,8vw,110px)}
+  .services{background:#0d0d0d;color:#fff;border:0;padding-top:clamp(70px,8vw,110px);padding-bottom:clamp(70px,8vw,110px)}
+  .services .subhead h3{color:#fff;font-size:clamp(30px,4.6vw,60px);font-weight:900}
+  .offers-lead{color:rgba(255,255,255,.65);max-width:620px;margin:-6px 0 40px;font-size:16px}
+  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .offer{display:flex;flex-direction:column;background:#161616;border:1px solid rgba(255,255,255,.1);color:#fff;transition:transform .35s,border-color .35s,box-shadow .35s}
+  .offer:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.45);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+  .offer-img{aspect-ratio:16/10;overflow:hidden}
+  .offer-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+  .offer:hover .offer-img img{transform:scale(1.06)}
+  .offer-body{padding:30px 30px 32px;display:flex;flex-direction:column;flex:1}
+  .offer-num{font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.45)}
+  .offer h3{font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin:10px 0 6px;color:#fff}
+  .offer-tag{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:20px}
+  .offer ul{list-style:none;margin:0 0 28px;flex:1}
+  .offer li{padding:11px 0;border-top:1px solid rgba(255,255,255,.1);font-size:15px;color:rgba(255,255,255,.85)}
+  .offer-cta{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0d0d0d;padding:14px 24px;border-radius:40px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .offer-cta i{font-style:normal;transition:transform .3s}
+  .offer:hover .offer-cta i{transform:translateX(5px)}
+  .contact{padding-top:clamp(80px,9vw,130px);padding-bottom:clamp(80px,9vw,130px)}
+  #reels{background:var(--bg2);padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px)}
+  @media(max-width:900px){.offers{grid-template-columns:1fr}}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -413,9 +455,7 @@
   <div class="presents-band">
     <!-- VIDÉO DE BANDE : place ton fichier "presents.mp4" à côté de index.html (et "presents.jpg" comme image d'attente).
          Tant qu'il n'y a pas de vidéo, le fond noir s'affiche automatiquement. -->
-    <video class="band-video lazy-video" muted loop playsinline preload="none" poster="presents.jpg">
-      <source data-src="presents.mp4" type="video/mp4">
-    </video>
+    <img class="band-video" src="giulia-video-automobile-03.jpg" alt="Alfa Romeo Giulia filmée par Hugo Mottin, vidéaste automobile" loading="lazy" decoding="async">
     <div class="band-overlay"></div>
     <div class="band-content">
       <span class="eyebrow reveal">Hugo Mottin</span>
@@ -433,6 +473,12 @@
     </div>
   </div>
   <div class="films" id="filmsSlider">
+    <a class="work work--poster reveal" href="film12.html">
+      <div class="ph v5"></div><img class="ph" src="film12.jpg" alt="Alfa Romeo Giulia" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
+      <div class="car-meta"><div class="brand">Alfa Romeo</div><div class="model">Giulia</div></div>
+      <div class="work-play"></div>
+      <div class="work-mark">HM</div>
+    </a>
     <a class="work work--poster reveal" href="film11.html">
       <div class="ph v3"></div><img class="ph" src="film11.jpg" alt="Porsche GT3 RS CarJager" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Porsche</div><div class="model">GT3 RS</div></div>
@@ -466,12 +512,6 @@
     <a class="work work--poster reveal" href="film3.html">
       <div class="ph v6"></div><img class="ph" src="film3.jpg" alt="Porsche Carrera 3.0L" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
       <div class="car-meta"><div class="brand">Porsche</div><div class="model">Carrera 3.0L</div></div>
-      <div class="work-play"></div>
-      <div class="work-mark">HM</div>
-    </a>
-    <a class="work work--poster reveal" href="film12.html">
-      <div class="ph v5"></div><img class="ph" src="film12.jpg" alt="Alfa Romeo Giulia" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
-      <div class="car-meta"><div class="brand">Alfa Romeo</div><div class="model">Giulia</div></div>
       <div class="work-play"></div>
       <div class="work-mark">HM</div>
     </a>
@@ -587,78 +627,38 @@
   <!-- ===== SECTEURS (photos) =====
        Dépose une photo pour chaque secteur : secteur-presentation-vehicule.jpg, secteur-evenement-garage.jpg, secteur-focus-atelier.jpg.
        Si une image manque, le fond gris s'affiche automatiquement. -->
-  <div class="sectors-grid reveal">
-    <div class="sector">
-      <div class="ph v2"></div><img class="ph" src="secteur-presentation-vehicule.jpg" alt="Vidéo de présentation de véhicule pour garage" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
-      <div class="sector-text">
-        <span class="sector-label">Présentation véhicule</span>
-        <p class="sector-desc">Mise en avant de véhicules neufs ou d'occasion pour accompagner une vente.</p>
+  <p class="offers-lead reveal">Présentation de véhicule, événement au garage ou focus atelier : chaque formule s'adapte à ce que vous voulez montrer. Tarif sur devis, réponse rapide.</p>
+  <div class="offers">
+    <a class="offer reveal" href="devis.html">
+      <div class="offer-img"><img src="secteur-presentation-vehicule.jpg" alt="Vidéo de présentation de véhicule pour garage" loading="lazy" decoding="async"></div>
+      <div class="offer-body">
+        <span class="offer-num">01</span>
+        <h3>Vidéo véhicule</h3>
+        <p class="offer-tag">Pour une vente ou une mise en avant ponctuelle</p>
+        <ul><li>Tournage d'une voiture, sur site</li><li>Vidéo de 30 à 45 secondes</li><li>Prête à publier, réseaux ou site web</li></ul>
+        <span class="offer-cta">Demander un devis <i>→</i></span>
       </div>
-    </div>
-    <div class="sector">
-      <div class="ph v4"></div><img class="ph" src="secteur-evenement-garage.jpg" alt="Vidéo d'événement dans un garage automobile" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
-      <div class="sector-text">
-        <span class="sector-label">Événement garage</span>
-        <p class="sector-desc">Couverture de vos événements d'entreprise : inauguration, événement à thème…</p>
+    </a>
+    <a class="offer reveal" href="devis.html">
+      <div class="offer-img"><img src="secteur-evenement-garage.jpg" alt="Vidéo de plusieurs véhicules dans un garage" loading="lazy" decoding="async"></div>
+      <div class="offer-body">
+        <span class="offer-num">02</span>
+        <h3>Pack multi véhicules</h3>
+        <p class="offer-tag">Pour présenter un stock ou une collection</p>
+        <ul><li>Plusieurs voitures en une session</li><li>Une vidéo par véhicule</li><li>Un style différent pour chaque voiture</li></ul>
+        <span class="offer-cta">Demander un devis <i>→</i></span>
       </div>
-    </div>
-    <div class="sector">
-      <div class="ph v6"></div><img class="ph" src="secteur-focus-atelier.jpg" alt="Vidéo focus atelier de restauration automobile" loading="lazy" decoding="async" onerror="this.style.display='none'"><div class="grad"></div>
-      <div class="sector-text">
-        <span class="sector-label">Focus atelier</span>
-        <p class="sector-desc">Vidéos consacrées à votre savoir-faire : atelier, techniciens, équipe commerciale.</p>
+    </a>
+    <a class="offer reveal" href="devis.html">
+      <div class="offer-img"><img src="secteur-focus-atelier.jpg" alt="Accompagnement vidéo mensuel pour garage automobile" loading="lazy" decoding="async"></div>
+      <div class="offer-body">
+        <span class="offer-num">03</span>
+        <h3>Accompagnement mensuel</h3>
+        <p class="offer-tag">Pour une présence régulière sur les réseaux</p>
+        <ul><li>Objectifs définis ensemble</li><li>Tournages et contenus chaque mois</li><li>Un suivi assuré sur la durée</li></ul>
+        <span class="offer-cta">Demander un devis <i>→</i></span>
       </div>
-    </div>
-  </div>
-  <div class="svc-grid">
-    <div class="svc reveal">
-      <div class="num">01</div>
-      <div class="svc-left">
-        <div class="svc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M15 9.5 21 6v12l-6-3.5"/></svg></div>
-        <h3>Vidéo<br>véhicule</h3>
-        <span class="svc-tag">Idéal pour une vente ou une mise en avant ponctuelle</span>
-      </div>
-      <div class="svc-right">
-        <ul class="svc-list">
-          <li>Tournage d'une seule voiture, sur site</li>
-          <li>1 vidéo de 30 à 45 secondes</li>
-          <li>Livrée prête à publier, réseaux sociaux ou site web</li>
-        </ul>
-      </div>
-      <a href="devis.html" class="btn btn-primary svc-btn">Demander un devis</a>
-    </div>
-    <div class="svc reveal">
-      <div class="num">02</div>
-      <div class="svc-left">
-        <div class="svc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg></div>
-        <h3>Pack<br>multi véhicules</h3>
-        <span class="svc-tag">Idéal pour présenter un stock ou une collection</span>
-      </div>
-      <div class="svc-right">
-        <ul class="svc-list">
-          <li>Tournage de plusieurs voitures en une seule session</li>
-          <li>1 vidéo de 30 à 45 secondes par véhicule</li>
-          <li>Livrées prêtes à publier, réseaux sociaux ou site web</li>
-        </ul>
-      </div>
-      <a href="devis.html" class="btn btn-primary svc-btn">Demander un devis</a>
-    </div>
-    <div class="svc reveal">
-      <div class="num">03</div>
-      <div class="svc-left">
-        <div class="svc-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="M9 15h6"/></svg></div>
-        <h3>Accompagnement<br>mensuel</h3>
-        <span class="svc-tag">Idéal pour une présence régulière sur les réseaux</span>
-      </div>
-      <div class="svc-right">
-        <ul class="svc-list">
-          <li>Définition des besoins et objectifs, ensemble</li>
-          <li>Tournages et création de contenu chaque mois</li>
-          <li>Un suivi assuré sur la durée</li>
-        </ul>
-      </div>
-      <a href="devis.html" class="btn btn-primary svc-btn">Demander un devis</a>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -688,13 +688,13 @@
        Pour changer un reel : remplace l'URL dans data-instgrm-permalink par le lien du reel souhaité. -->
   <div class="reels-embeds reveal">
     <div class="reel-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZXKsfIunpi/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
-        <a href="https://www.instagram.com/p/DZXKsfIunpi/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfukM0bxDBg/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
+        <a href="https://www.instagram.com/reel/DfukM0bxDBg/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
       </blockquote>
     </div>
     <div class="reel-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYm0tFoM8wq/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
-        <a href="https://www.instagram.com/p/DYm0tFoM8wq/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DgE3VLRSx4O/" data-instgrm-version="14" style="background:#FFF;border:0;margin:0;padding:0;width:100%">
+        <a href="https://www.instagram.com/reel/DgE3VLRSx4O/" target="_blank" rel="noopener">Voir le reel sur Instagram</a>
       </blockquote>
     </div>
     <div class="reel-embed">
