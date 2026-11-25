@@ -19,6 +19,11 @@
       "source": "/videaste-automobile-cote-d-azur.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/devis.html",
+      "destination": "/contact.html#devis",
+      "permanent": true
     }
   ]
 }

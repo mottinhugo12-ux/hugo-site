@@ -1,23 +1,26 @@
 # Hugo Mottin, vidéaste automobile
 
-> Hugo Mottin est un vidéaste automobile indépendant basé à Paris. Il réalise des vidéos cinématiques de voitures de caractère, classiques comme récentes, pour les garages, concessions, ateliers de restauration et collectionneurs privés en France (Paris, Île-de-France, Lyon, Rhône-Alpes, Drôme, Provence, Côte d'Azur).
+> Hugo Mottin est un vidéaste automobile indépendant basé à Paris. Il réalise des vidéos automobiles cinématiques (vidéo voiture, film de présentation, Reels, drone) de voitures de caractère, classiques comme récentes, pour les garages, concessions, ateliers de restauration et collectionneurs privés en France : Paris, Île-de-France, Lyon, Rhône-Alpes, Drôme, Provence, Côte d'Azur.
 
-- Prestations : présentation de véhicule, plans en drone, Reels et vidéos courtes pour les réseaux sociaux (vertical 9:16), vidéos horizontales 16:9, focus atelier, événements automobiles, accompagnement mensuel.
-- Tarifs : sur devis, selon le nombre de véhicules et de vidéos. Livraison en une semaine maximum.
-- Références : plusieurs centaines de milliers de vues cumulées, reportages au salon Époqu'Auto 2026 pour Youngtimers La Chaîne.
-- Contact : 06 03 72 13 83, Instagram @hugomottin.
+- Prestations : le film d'une voiture (présentation de véhicule), la journée collection (plusieurs véhicules en une session), le partenariat mensuel (contenus réguliers pour les réseaux), la couverture d'événement. Plans en drone, formats vertical 9:16 et horizontal 16:9.
+- Tarifs : les vidéos commencent à partir de 400 €, puis sur devis selon le nombre de véhicules, de vidéos et le lieu. Livraison en une semaine maximum. Déplacement inclus dans un rayon de 50 km autour de Paris ou de Lyon.
+- Références : plusieurs centaines de milliers de vues cumulées ; vidéos pour CarJager, Analog Automobile, Mecanicus, Iconic L'Atelier des Légendes ; cadrage de reportages au salon Époqu'Auto 2026 pour Youngtimers La Chaîne.
+- Contact : 06 03 72 13 83, mottin.hugo12@gmail.com, Instagram @hugomottin.
 
 ## Pages
-- [Réalisations et services](https://hugomottin.com/)
+- [Accueil : réalisations, vidéos et prestations](https://hugomottin.com/)
 - [À propos](https://hugomottin.com/about.html)
-- [Contact et demande de devis](https://hugomottin.com/devis.html)
+- [Contact et demande de devis](https://hugomottin.com/contact.html)
+- [Blog vidéo automobile](https://hugomottin.com/blog.html)
 
 ## Articles
+- [Comment faire connaître son garage automobile](https://hugomottin.com/blog-faire-connaitre-son-garage.html)
+- [Vendre plus vite les voitures de son stock](https://hugomottin.com/blog-vendre-plus-vite-voitures-stock.html)
 - [Combien coûte une vidéo automobile pour un garage ?](https://hugomottin.com/blog-prix-video-automobile.html)
 - [Quelles vidéos publier pour vendre une voiture de collection ou de prestige ?](https://hugomottin.com/blog-videos-reseaux-sociaux-garage.html)
 - [Comment filmer une voiture : les plans indispensables](https://hugomottin.com/blog-comment-filmer-une-voiture.html)
 - [Vidéo ou photos : quoi choisir pour vendre une voiture de collection ?](https://hugomottin.com/blog-video-ou-photo-vendre-voiture.html)
-- [Préparer sa voiture avant un tournage vidéo : la checklist](https://hugomottin.com/blog-preparer-voiture-tournage.html)
-- [Où filmer une voiture autour de Paris : les types de lieux qui marchent](https://hugomottin.com/blog-lieux-tournage-voiture-paris.html)
-- [Le drone en vidéo automobile : ce qu'il apporte vraiment](https://hugomottin.com/blog-drone-video-automobile.html)
-- [Instagram pour un garage automobile : comment publier des vidéos qui marchent](https://hugomottin.com/blog-instagram-garage-automobile.html)
+- [Préparer sa voiture avant un tournage vidéo](https://hugomottin.com/blog-preparer-voiture-tournage.html)
+- [Où filmer une voiture autour de Paris](https://hugomottin.com/blog-lieux-tournage-voiture-paris.html)
+- [Le drone en vidéo automobile](https://hugomottin.com/blog-drone-video-automobile.html)
+- [Instagram pour un garage automobile](https://hugomottin.com/blog-instagram-garage-automobile.html)
